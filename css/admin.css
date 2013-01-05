@@ -1,0 +1,69 @@
+/* ADMIN CSS */
+
+.yadisk-files .clear {
+	clear: both;
+}
+
+.yadisk-files .small,
+.yadisk-files .combo {
+	width: 30px;
+}
+
+.yadisk-files-bl {
+	
+	background: #ECECEC;
+	background: -moz-linear-gradient(center top , #F9F9F9, #ECECEC);
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	padding:15px;
+	margin: 15px 0;
+}
+
+	.yadisk-files-bl .p {
+		margin: 10px 0;
+	}
+	
+	.yadisk-files-bl .p .label {
+		width: 150px;
+		display: block;
+		float:left;
+		margin-right: 10px;
+	}
+	
+	.yadisk-files-bl .width500 {
+		width: 500px;
+	}
+	
+	.yadisk-files-bl .p .inputs {
+		display: block;
+		float:left;
+	}
+	
+	.yadisk-files-bl .buttons {
+		margin: 20px 0 0 160px;
+	}
+	
+	.yadisk-files-bl .clear {
+		clear: both;
+	}
+
+.yadisk-files-content {
+	width: 80%;
+	float: left;
+}
+
+.yadisk-files-content.yadisk-files-bl {
+	width: 75%;
+}
+
+.yadisk-files .panels .panel-left,
+.yadisk-files .panels .panel-right {
+	float:left;
+	width:46%;
+	padding:2%;
+}
+
+.yadisk-files.unregistered .MegaTickerPROOption {
+	background: url('../img/stripes.png');
+	opacity: 0.5;
+}

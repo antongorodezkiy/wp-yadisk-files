@@ -1,0 +1,72 @@
+ul {
+	list-style: none;
+	margin: 0;
+}
+
+li {
+	display: block;
+	float: left;
+	width: 100px;
+	overflow: hidden;
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid transparent;
+}
+
+	li:hover {
+		background: #efefef;
+		border: 1px solid #aaa;
+		box-shadow: 1px 1px 2px #999;
+	}
+	
+	li img, li iframe {
+		max-width: 64px;
+		max-height: 64px;
+		margin: 0 auto;
+		display: block;
+	}
+	
+	li a.add {
+		padding: 3px 3px 3px 27px;
+		display: block;
+		text-align: center;
+	}
+	
+	.clear {
+		clear: both;
+	}
+
+.breadcrumbs {
+	background: none repeat scroll 0 0 #FFFFFF;
+    display: block;
+    padding: 3px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+	border-bottom: 1px solid #eee;
+	box-shadow: 0px 1px 2px #999;
+}
+
+.container {
+	box-shadow: 0px 0px 1px #aaa;
+}
+
+.loading {
+	background: url('../img/loading.gif') no-repeat center center;
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+}
+
+.loading_back {
+	opacity: 0.5;
+	background: #fff;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+}
+
+.hidden {
+	display: hidden;
+}

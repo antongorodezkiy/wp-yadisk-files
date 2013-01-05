@@ -813,7 +813,8 @@ class webdav_client {
 			if (strcmp($response['status']['status-code'],'207') == 0 ) {
 				// ok so far
 				// next there should be a Content-Type: text/xml; charset="utf-8" header line
-				if (strcmp($response['header']['Content-Type'], 'text/xml; charset="utf-8"') == 0) {
+				if (strcmp($response['header']['Content-Type'], 'text/xml; charset="utf-8"') == 0 ||
+                        strcmp($response['header']['Content-Type'], 'application/xml; charset="utf-8"')==0) {
 					// ok let's get the content of the xml stuff
 					$this->_parser = xml_parser_create_ns();
 					// forget old data...
@@ -1325,7 +1326,8 @@ class webdav_client {
 		$buffer = '';
 		$header = '';
 		// attention: do not make max_chunk_size to big....
-		$max_chunk_size = 8192;
+		//$max_chunk_size = 8192;
+		$max_chunk_size = 16364;
 		// be sure we got a open ressource
 		if (! $this->_fp) {
 			$this->_error_log('socket is not open. Can not process response');
@@ -1392,12 +1394,16 @@ class webdav_client {
 					}
 				} else {
 					// data is to big to handle it as one. Get it chunk per chunk...
-					do {
+					/*do {
 						$mod = $max_chunk_size % ($matches[1] - strlen($buffer));
 						$chunk_size = ($mod == $max_chunk_size ? $max_chunk_size : $matches[1] - strlen($buffer));
 						$buffer .= fread($this->_fp, $chunk_size);
 						$this->_error_log('mod: ' . $mod . ' chunk: ' . $chunk_size . ' total: ' . strlen($buffer));
-					} while ($mod == $max_chunk_size);
+					} while ($mod == $max_chunk_size);*/
+					fwrite($this->_fp, "Action: Status\r\n\r\n");
+					fwrite($this->_fp, "Connection: Close\r\n\r\n");
+					while(!feof($this->_fp))
+						$buffer .= fread($this->_fp, $max_chunk_size);
 				}
 				break;
 
@@ -1461,6 +1467,7 @@ class webdav_client {
 			if (!$header_done ) {
 				// store all found headers in array ...
 				list($fieldname, $fieldvalue) = explode(':', $lines[$i]);
+				$fieldvalue = trim(str_replace($fieldname.':','',$lines[$i]));
 				// check if this header was allready set (apache 2.0 webdav module does this....).
 				// If so we add the the value to the end the fieldvalue, separated by comma...
 				if (! $ret_struct['header'][$fieldname]) {
