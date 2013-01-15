@@ -74,12 +74,14 @@ class YadiskAPI {
 			if (self::entryIsDir($file))
 				$folders[] = array(
 					'name' => $file['dav::multistatus_dav::response_dav::propstat_dav::prop_dav::displayname_'],
+					'ext' => '',
 					'href' => $file['href'],
 					'size' => $file['getcontentlength']
 				);
 			else
 				$files[] = array(
 					'name' => $file['dav::multistatus_dav::response_dav::propstat_dav::prop_dav::displayname_'],
+					'ext' => pathinfo($file['dav::multistatus_dav::response_dav::propstat_dav::prop_dav::displayname_'], PATHINFO_EXTENSION),
 					'href' => $file['href'],
 					'size' => formatBytes($file['getcontentlength'])
 				);

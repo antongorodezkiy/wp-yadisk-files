@@ -41,7 +41,7 @@ var currentDir = '/';
 				if (notifyIsSuccess(json)) {
 				
 					if (path != '/') {
-						html += '<tr><td><a href="#" class="dir" data-href="/">/</a></td><td>&nbsp;</td></tr>';
+						html += '<tr><td><a href="#" class="in dir file arrow_up" data-href="/"><span class="file-icon"></span>/</a></td><td>&nbsp;</td></tr>';
 						
 						for(i in pathParts)
 							if (pathParts[i] != '')
@@ -50,7 +50,7 @@ var currentDir = '/';
 						delete newPathParts[newPathParts.length-1];
 						
 						var newPath = newPathParts.join('/');
-						html += '<tr><td><a href="#" class="dir" data-href="/'+newPath+'">..</a></td><td>&nbsp;</td></tr>';
+						html += '<tr><td><a href="#" class="in dir file arrow_turn_left" data-href="/'+newPath+'"><span class="file-icon"></span>..</a></td><td>&nbsp;</td></tr>';
 					}
 					
 					// breadcrumbs
@@ -58,13 +58,13 @@ var currentDir = '/';
 					
 					var folders = json.data.folders;
 					$.each(folders,function(index, value){
-						html += '<tr><td><a href="#" class="dir" data-href="'+value.href+'">'+value.name+'</a></td><td>&nbsp;</td></tr>';
+						html += '<tr><td><a href="#" class="in dir file folder" data-href="'+value.href+'"><span class="file-icon"></span>'+value.name+'</a></td><td>&nbsp;</td></tr>';
 					});
 					
 					
 					var files = json.data.files;
 					$.each(files,function(index, value){
-						html += '<tr><td><a href="#" class="file" data-href="'+value.href+'" data-size="'+value.size+'">'+value.name+'</a></td><td>'+value.size+'</td></tr>';
+						html += '<tr><td><a href="#" class="in file '+value.ext+'" data-href="'+value.href+'" data-size="'+value.size+'"><span class="file-icon"></span>'+value.name+'</a></td><td><span class="in">'+value.size+'</span></td></tr>';
 					});
 					
 					$(".content").html(html);
@@ -127,7 +127,14 @@ var currentDir = '/';
 		
 		
 	// tabs
-		$(".tabs").tabs();
+		//$(".tabs").tabs();
+		$(".yadisk-about-activator").click(function(){
+			$(".yadisk-files-about").dialog({
+				title: $(".yadisk-files-about").attr("title"),
+				width: 600,
+				height: 350
+			});
+		});
 		
 		
 	}); // ready

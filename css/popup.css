@@ -1,3 +1,16 @@
+tr:hover td {
+	background: #eee;
+}
+
+td {
+	padding: 0;
+}
+
+td .in {
+	display: block;
+	padding: 0.75em 0.5em;
+}
+
 ul {
 	list-style: none;
 	margin: 0;
@@ -45,6 +58,7 @@ li {
     width: 100%;
 	border-bottom: 1px solid #eee;
 	box-shadow: 0px 1px 2px #999;
+	z-index: 10;
 }
 
 .container {
@@ -69,4 +83,147 @@ li {
 
 .hidden {
 	display: hidden;
+}
+
+
+.dir, .file {
+	display: block;
+}
+
+
+.file .file-icon {
+	background: url('../img/sprite-files-icons.png') no-repeat top left;
+	display: inline-block;
+    height: 16px;
+	width: 16px;
+	margin: 0 5px 0 0;
+	position: relative;
+    top: 3px;
+}
+
+.file.add .file-icon { background-position: 0 0; width: 16px; height: 16px; } 
+.file.arrow_turn_left .file-icon { background-position: 0 -66px; width: 16px; height: 16px; } 
+.file.arrow_up .file-icon { background-position: 0 -132px; width: 16px; height: 16px; } 
+.file.bullet_go .file-icon { background-position: 0 -198px; width: 16px; height: 16px; } 
+.file.drive_network .file-icon { background-position: 0 -264px; width: 16px; height: 16px; } 
+.file.3gp .file-icon { background-position: 0 -330px; width: 16px; height: 16px; } 
+.file.7z .file-icon { background-position: 0 -396px; width: 16px; height: 16px; } 
+.file.ace .file-icon { background-position: 0 -462px; width: 16px; height: 16px; } 
+.file.ai .file-icon { background-position: 0 -528px; width: 16px; height: 16px; } 
+.file.aif .file-icon { background-position: 0 -594px; width: 16px; height: 16px; } 
+.file.aiff .file-icon { background-position: 0 -660px; width: 16px; height: 16px; } 
+.file.amr .file-icon { background-position: 0 -726px; width: 16px; height: 16px; } 
+.file.asf .file-icon { background-position: 0 -792px; width: 16px; height: 16px; } 
+.file.asx .file-icon { background-position: 0 -858px; width: 16px; height: 16px; } 
+.file.bat .file-icon { background-position: 0 -924px; width: 16px; height: 16px; } 
+.file.bin .file-icon { background-position: 0 -990px; width: 16px; height: 16px; } 
+.file.bmp .file-icon { background-position: 0 -1056px; width: 16px; height: 16px; } 
+.file.bup .file-icon { background-position: 0 -1122px; width: 16px; height: 16px; } 
+.file.cab .file-icon { background-position: 0 -1188px; width: 16px; height: 16px; } 
+.file.cbr .file-icon { background-position: 0 -1254px; width: 16px; height: 16px; } 
+.file.cda .file-icon { background-position: 0 -1320px; width: 16px; height: 16px; } 
+.file.cdl .file-icon { background-position: 0 -1386px; width: 16px; height: 16px; } 
+.file.cdr .file-icon { background-position: 0 -1452px; width: 16px; height: 16px; } 
+.file.chm .file-icon { background-position: 0 -1518px; width: 16px; height: 16px; } 
+.file.css .file-icon { background-position: 0 -1584px; width: 16px; height: 16px; } 
+.file.dat .file-icon { background-position: 0 -1650px; width: 16px; height: 16px; } 
+.file.divx .file-icon { background-position: 0 -1716px; width: 16px; height: 16px; } 
+.file.dll .file-icon { background-position: 0 -1782px; width: 16px; height: 16px; } 
+.file.dmg .file-icon { background-position: 0 -1848px; width: 16px; height: 16px; } 
+.file.doc .file-icon { background-position: 0 -1914px; width: 16px; height: 16px; } 
+.file.dss .file-icon { background-position: -66px 0; width: 16px; height: 16px; } 
+.file.dvf .file-icon { background-position: -66px -66px; width: 16px; height: 16px; } 
+.file.dwg .file-icon { background-position: -66px -132px; width: 16px; height: 16px; } 
+.file.eml .file-icon { background-position: -66px -198px; width: 16px; height: 16px; } 
+.file.eps .file-icon { background-position: -66px -264px; width: 16px; height: 16px; } 
+.file.exe .file-icon, .file.apk .file-icon { background-position: -66px -330px; width: 16px; height: 16px; } 
+.file.fla .file-icon { background-position: -66px -396px; width: 16px; height: 16px; } 
+.file.flv .file-icon { background-position: -66px -462px; width: 16px; height: 16px; } 
+.file.gif .file-icon { background-position: -66px -528px; width: 16px; height: 16px; } 
+.file.gz .file-icon { background-position: -66px -594px; width: 16px; height: 16px; } 
+.file.hqx .file-icon { background-position: -66px -660px; width: 16px; height: 16px; } 
+.file.htm .file-icon { background-position: -66px -726px; width: 16px; height: 16px; } 
+.file.html .file-icon { background-position: -66px -792px; width: 16px; height: 16px; } 
+.file.ifo .file-icon { background-position: -66px -858px; width: 16px; height: 16px; } 
+.file.indd .file-icon { background-position: -66px -924px; width: 16px; height: 16px; } 
+.file.iso .file-icon { background-position: -66px -990px; width: 16px; height: 16px; } 
+.file.jar .file-icon { background-position: -66px -1056px; width: 16px; height: 16px; } 
+.file.javascript .file-icon { background-position: -66px -1122px; width: 16px; height: 16px; } 
+.file.jpeg .file-icon { background-position: -66px -1188px; width: 16px; height: 16px; } 
+.file.jpg .file-icon { background-position: -66px -1254px; width: 16px; height: 16px; } 
+.file.lnk .file-icon { background-position: -66px -1320px; width: 16px; height: 16px; } 
+.file.log .file-icon { background-position: -66px -1386px; width: 16px; height: 16px; } 
+.file.m4a .file-icon { background-position: -66px -1452px; width: 16px; height: 16px; } 
+.file.m4b .file-icon { background-position: -66px -1518px; width: 16px; height: 16px; } 
+.file.m4p .file-icon { background-position: -66px -1584px; width: 16px; height: 16px; } 
+.file.m4v .file-icon { background-position: -66px -1650px; width: 16px; height: 16px; } 
+.file.mcd .file-icon { background-position: -66px -1716px; width: 16px; height: 16px; } 
+.file.mdb .file-icon { background-position: -66px -1782px; width: 16px; height: 16px; } 
+.file.mid .file-icon { background-position: -66px -1848px; width: 16px; height: 16px; } 
+.file.mov .file-icon { background-position: -66px -1914px; width: 16px; height: 16px; } 
+.file.mp2 .file-icon { background-position: -132px 0; width: 16px; height: 16px; } 
+.file.mp4 .file-icon { background-position: -132px -66px; width: 16px; height: 16px; } 
+.file.mpeg .file-icon { background-position: -132px -132px; width: 16px; height: 16px; } 
+.file.mpg .file-icon { background-position: -132px -198px; width: 16px; height: 16px; } 
+.file.msi .file-icon { background-position: -132px -264px; width: 16px; height: 16px; } 
+.file.mswmm .file-icon { background-position: -132px -330px; width: 16px; height: 16px; } 
+.file.ogg .file-icon, .file.mp3 .file-icon { background-position: -132px -396px; width: 16px; height: 16px; } 
+.file.pdf .file-icon, .file.djvu .file-icon { background-position: -132px -462px; width: 16px; height: 16px; } 
+.file.php .file-icon { background-position: -132px -528px; width: 16px; height: 16px; } 
+.file.png .file-icon { background-position: -132px -594px; width: 16px; height: 16px; } 
+.file.pps .file-icon { background-position: -132px -660px; width: 16px; height: 16px; } 
+.file.ps .file-icon { background-position: -132px -726px; width: 16px; height: 16px; } 
+.file.psd .file-icon { background-position: -132px -792px; width: 16px; height: 16px; } 
+.file.pst .file-icon { background-position: -132px -858px; width: 16px; height: 16px; } 
+.file.ptb .file-icon { background-position: -132px -924px; width: 16px; height: 16px; } 
+.file.pub .file-icon { background-position: -132px -990px; width: 16px; height: 16px; } 
+.file.qbb .file-icon { background-position: -132px -1056px; width: 16px; height: 16px; } 
+.file.qbw .file-icon { background-position: -132px -1122px; width: 16px; height: 16px; } 
+.file.qxd .file-icon { background-position: -132px -1188px; width: 16px; height: 16px; } 
+.file.ram .file-icon { background-position: -132px -1254px; width: 16px; height: 16px; } 
+.file.rar .file-icon { background-position: -132px -1320px; width: 16px; height: 16px; } 
+.file.rm .file-icon { background-position: -132px -1386px; width: 16px; height: 16px; } 
+.file.rmvb .file-icon { background-position: -132px -1452px; width: 16px; height: 16px; } 
+.file.rtf .file-icon { background-position: -132px -1518px; width: 16px; height: 16px; } 
+.file.ruby .file-icon { background-position: -132px -1584px; width: 16px; height: 16px; } 
+.file.sea .file-icon { background-position: -132px -1650px; width: 16px; height: 16px; } 
+.file.ses .file-icon { background-position: -132px -1716px; width: 16px; height: 16px; } 
+.file.sh .file-icon { background-position: -132px -1782px; width: 16px; height: 16px; } 
+.file.sit .file-icon { background-position: -132px -1848px; width: 16px; height: 16px; } 
+.file.sitx .file-icon { background-position: -132px -1914px; width: 16px; height: 16px; } 
+.file.sql .file-icon { background-position: -198px 0; width: 16px; height: 16px; } 
+.file.ss .file-icon { background-position: -198px -66px; width: 16px; height: 16px; } 
+.file.swf .file-icon { background-position: -198px -132px; width: 16px; height: 16px; } 
+.file.tgz .file-icon { background-position: -198px -198px; width: 16px; height: 16px; } 
+.file.thm .file-icon { background-position: -198px -264px; width: 16px; height: 16px; } 
+.file.tif .file-icon { background-position: -198px -330px; width: 16px; height: 16px; } 
+.file.tmp .file-icon { background-position: -198px -396px; width: 16px; height: 16px; } 
+.file.torrent .file-icon { background-position: -198px -462px; width: 16px; height: 16px; } 
+.file.ttf .file-icon { background-position: -198px -528px; width: 16px; height: 16px; } 
+.file.txt .file-icon { background-position: -198px -594px; width: 16px; height: 16px; } 
+.file.vcd .file-icon { background-position: -198px -660px; width: 16px; height: 16px; } 
+.file.vob .file-icon { background-position: -198px -726px; width: 16px; height: 16px; } 
+.file.wav .file-icon { background-position: -198px -792px; width: 16px; height: 16px; } 
+.file.wma .file-icon { background-position: -198px -858px; width: 16px; height: 16px; } 
+.file.wmv .file-icon { background-position: -198px -924px; width: 16px; height: 16px; } 
+.file.wps .file-icon { background-position: -198px -990px; width: 16px; height: 16px; } 
+.file.xls .file-icon { background-position: -198px -1056px; width: 16px; height: 16px; } 
+.file.xpi .file-icon { background-position: -198px -1122px; width: 16px; height: 16px; } 
+.file.zip .file-icon { background-position: -198px -1188px; width: 16px; height: 16px; } 
+.file.folder .file-icon { background-position: -198px -1254px; width: 16px; height: 16px; } 
+.file.folder_add .file-icon { background-position: -198px -1320px; width: 16px; height: 16px; } 
+.file.folder_edit .file-icon { background-position: -198px -1386px; width: 16px; height: 16px; } 
+.file.folder_go .file-icon { background-position: -198px -1452px; width: 16px; height: 16px; } 
+.file.folder_link .file-icon { background-position: -198px -1518px; width: 16px; height: 16px; } 
+.file.link_add .file-icon { background-position: -198px -1584px; width: 16px; height: 16px; } 
+.file.textfield_rename .file-icon { background-position: -198px -1650px; width: 16px; height: 16px; } 
+.file.tick .file-icon { background-position: -198px -1716px; width: 16px; height: 16px; } 
+
+
+.file:hover .file-icon {
+	background-position: -198px -1584px; width: 16px; height: 16px;
+}
+
+.dir:hover .file-icon {
+	background-position: -198px -1452px; width: 16px; height: 16px;
 }

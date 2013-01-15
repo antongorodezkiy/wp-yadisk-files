@@ -4,66 +4,68 @@
 	clear: both;
 }
 
-.yadisk-files .small,
-.yadisk-files .combo {
-	width: 30px;
-}
-
 .yadisk-files-bl {
-	
-	background: #ECECEC;
-	background: -moz-linear-gradient(center top , #F9F9F9, #ECECEC);
-	border-radius: 8px;
-	border: 1px solid #ccc;
-	padding:15px;
+	background: #f3f3f3; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YzZjNmMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkZmRmZGYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, #f3f3f3 0%, #dfdfdf 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3f3f3), color-stop(100%,#dfdfdf)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f3f3f3 0%,#dfdfdf 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f3f3f3 0%,#dfdfdf 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f3f3f3 0%,#dfdfdf 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f3f3f3 0%,#dfdfdf 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#dfdfdf',GradientType=0 ); /* IE6-8 */
+
+	border-radius: 6px / 4px;
+	box-shadow: 0px 2px 5px #333;
+	padding:15px 30px;
 	margin: 15px 0;
 }
 
-	.yadisk-files-bl .p {
-		margin: 10px 0;
-	}
-	
-	.yadisk-files-bl .p .label {
-		width: 150px;
+.yadisk-files .hidden {
+	display: hidden;
+}
+
+.yadisk-files input {
+	padding: 7px 14px;
+}
+
+.yadisk-files label {
+	line-height: 30px;
+}
+
+	.yadisk-btn {
+		background-color: #f3f3f3;
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f3f3), color-stop(50%, #dddddd), color-stop(50%, #d2d2d2), color-stop(100%, #dfdfdf));
+		background-image: -webkit-linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%);
+		background-image: -moz-linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%);
+		background-image: -ms-linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%);
+		background-image: -o-linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%);
+		background-image: linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%);
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		-webkit-box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #d5d5d5;
+		box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #d5d5d5;
+		font: bold 16px/1 "helvetica neue", helvetica, arial, sans-serif;
+		margin: 0px;
+		padding: 7px 14px;
+		text-align: center;
+		width: auto;
+		text-shadow: 0 1px 1px #fff;
 		display: block;
-		float:left;
-		margin-right: 10px;
-	}
-	
-	.yadisk-files-bl .width500 {
-		width: 500px;
-	}
-	
-	.yadisk-files-bl .p .inputs {
-		display: block;
-		float:left;
-	}
-	
-	.yadisk-files-bl .buttons {
-		margin: 20px 0 0 160px;
-	}
-	
-	.yadisk-files-bl .clear {
-		clear: both;
-	}
+		 }
+		.yadisk-btn:hover {
+		  background-color: #e5e5e5;
+		  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(50%, #d1d1d1), color-stop(50%, #c4c4c4), color-stop(100%, #b8b8b8));
+		  background-image: -webkit-linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%);
+		  background-image: -moz-linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%);
+		  background-image: -ms-linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%);
+		  background-image: -o-linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%);
+		  background-image: linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%);
+		  -webkit-box-shadow: inset 0 1px 0 0 #f2f2f2, 0 1px 0 0 #c9c9c9;
+		  box-shadow: inset 0 1px 0 0 #f2f2f2, 0 1px 0 0 #c9c9c9;
+		  cursor: pointer; }
+		.yadisk-btn:active {
+		  -webkit-box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white;
+		  box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white; }
 
-.yadisk-files-content {
-	width: 80%;
-	float: left;
-}
-
-.yadisk-files-content.yadisk-files-bl {
-	width: 75%;
-}
-
-.yadisk-files .panels .panel-left,
-.yadisk-files .panels .panel-right {
-	float:left;
-	width:46%;
-	padding:2%;
-}
-
-.yadisk-files.unregistered .MegaTickerPROOption {
-	background: url('../img/stripes.png');
-	opacity: 0.5;
-}
