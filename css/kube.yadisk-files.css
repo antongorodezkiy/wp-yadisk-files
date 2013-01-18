@@ -1,0 +1,2403 @@
+html  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+body  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+
+	vertical-align: baseline;
+
+	font-style: normal;
+	color: #000;
+
+}
+
+.yadisk-files div  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files span  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files object  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	width: auto;
+	max-width: 100%;
+}
+
+.yadisk-files iframe  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+.yadisk-files p  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	line-height: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files blockquote  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	quotes: none;
+	line-height: 1.5em;
+	margin-bottom: 1.5em;
+	padding-left: 1.5em;
+	border-left: 1px solid #ccc;
+	color: #666;
+}
+
+.yadisk-files pre  {
+	margin: 0;
+	padding: 1.5em;
+	border: 1px solid #ddd;
+	outline: 0;
+	font-size: 90%;
+	vertical-align: baseline;
+	background: #f8f8f8;
+	font-style: normal;
+	margin-bottom: 1.5em;
+	font-family: menlo,monaco,monospace,sans-serif;
+	border-radius: 3px;
+	white-space: pre;
+	overflow: auto;
+}
+
+.yadisk-files a  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	color: #369;
+}
+
+.yadisk-files abbr  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files acronym  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files address  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: italic;
+}
+
+.yadisk-files big  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files cite  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: italic;
+	color: #888;
+}
+
+.yadisk-files code  {
+	margin: 0;
+	padding: 2px 3px;
+	border: 1px solid #ddd;
+	outline: 0;
+	font-size: 90%;
+	vertical-align: baseline;
+	background: #f8f8f8;
+	font-style: normal;
+	font-family: menlo,monaco,monospace,sans-serif;
+	display: inline-block;
+	line-height: 1;
+}
+
+.yadisk-files del  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	text-decoration: line-through;
+}
+
+.yadisk-files dfn  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files em  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: italic;
+}
+
+.yadisk-files img  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+.yadisk-files ins  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	background-color: #fe5;
+	color: #000;
+	text-decoration: none;
+}
+
+.yadisk-files kbd  {
+	margin: 0;
+	padding: 0 6px;
+	border: 0;
+	outline: 0;
+	font-size: 90%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	font-family: menlo,monaco,monospace,sans-serif;
+	border-radius: 4px;
+	box-shadow: 0 2px 0 rgba(0,0,0,0.2),0 0 0 1px #fff inset;
+	background-color: #fafafa;
+	border-color: #ccc #ccc white;
+	border-style: solid solid none;
+	border-width: 1px 1px medium;
+	color: #444;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.yadisk-files q  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	quotes: none;
+}
+
+.yadisk-files s  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files samp  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 90%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	font-family: menlo,monaco,monospace,sans-serif;
+}
+
+.yadisk-files small  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: .85em;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	line-height: 1;
+}
+
+.yadisk-files strike  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files strong  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.yadisk-files sub  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: .7em;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	line-height: 0;
+	position: relative;
+	bottom: -0.25em;
+}
+
+.yadisk-files sup  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: .7em;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	line-height: 0;
+	position: relative;
+	top: -0.5em;
+}
+
+.yadisk-files tt  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files var  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files b  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.yadisk-files u  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files i  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: italic;
+}
+
+.yadisk-files center  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files dl  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	line-height: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files dt  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	line-height: 1.5em;
+}
+
+.yadisk-files dd  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	line-height: 1.5em;
+	margin-left: 1em;
+}
+
+.yadisk-files ol  {
+	margin: 0 0 0 2em;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	line-height: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files ul  {
+	margin: 0 0 0 2em;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	line-height: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files li  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files fieldset  {
+	margin: 0;
+	padding: 2em 1.5em;
+	border: 1px solid #ddd;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files form  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files label  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files legend  {
+	margin: 0;
+	padding: 0 1em;
+	border: 0;
+	outline: 0;
+	font-size: 1.2em;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.yadisk-files table  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files caption  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: top;
+	background: transparent;
+	font-style: normal;
+	text-align: left;
+	font-weight: normal;
+}
+
+.yadisk-files tbody  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files tfoot  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files thead  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files tr  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files th  {
+	margin: 0;
+	padding: .75em .5em;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: top;
+	background: transparent;
+	font-style: normal;
+	text-align: left;
+	font-weight: normal;
+	line-height: 1.5em;
+	border-bottom: 1px solid #eee;
+}
+
+.yadisk-files td  {
+	margin: 0;
+	padding: .75em .5em;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: top;
+	background: transparent;
+	font-style: normal;
+	text-align: left;
+	font-weight: normal;
+	line-height: 1.5em;
+	border-bottom: 1px solid #eee;
+}
+
+.yadisk-files article  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	display: block;
+}
+
+.yadisk-files aside  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	display: block;
+}
+
+.yadisk-files canvas  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files details  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	display: block;
+}
+
+.yadisk-files embed  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	width: auto;
+	max-width: 100%;
+}
+
+.yadisk-files figure  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	display: block;
+}
+
+.yadisk-files figcaption  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: .85em;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: italic;
+	display: block;
+}
+
+.yadisk-files footer  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	display: block;
+}
+
+.yadisk-files header  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	display: block;
+}
+
+.yadisk-files hgroup  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	display: block;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files menu  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files nav  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	display: block;
+}
+
+.yadisk-files output  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files ruby  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files section  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	display: block;
+}
+
+.yadisk-files summary  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files time  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files mark  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	background-color: #fe5;
+	color: #000;
+	text-decoration: none;
+}
+
+.yadisk-files audio  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+}
+
+.yadisk-files video  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+.yadisk-files h1  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 2.5714285714285716em;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	font-weight: bold;
+	margin-bottom: .5em;
+	line-height: 1em;
+}
+
+.yadisk-files h2  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 2.142857142857143em;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	font-weight: bold;
+	margin-bottom: .5em;
+	line-height: 1.1em;
+}
+
+.yadisk-files h3  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 1.7142857142857142em;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	font-weight: bold;
+	margin-bottom: .5em;
+	line-height: 1.3em;
+}
+
+.yadisk-files h4  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 1.2857142857142858em;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	font-weight: bold;
+	margin-bottom: .5em;
+	line-height: 1.3em;
+}
+
+.yadisk-files h5  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 1.1428571428571428em;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	font-weight: bold;
+	margin-bottom: .5em;
+	line-height: 1.3em;
+}
+
+.yadisk-files h6  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 1em;
+	vertical-align: baseline;
+	background: transparent;
+	font-style: normal;
+	font-weight: bold;
+	margin-bottom: .5em;
+	line-height: 1.3em;
+	text-transform: uppercase;
+}
+
+.yadisk-files blockquote p:before  {
+	content: none;
+}
+
+.yadisk-files blockquote p:after  {
+	content: none;
+}
+
+.yadisk-files q:before  {
+	content: none;
+}
+
+.yadisk-files q:after  {
+	content: none;
+}
+
+.yadisk-files thead th  {
+	font-weight: bold;
+	vertical-align: bottom;
+}
+
+.yadisk-files thead td  {
+	font-weight: bold;
+	vertical-align: bottom;
+}
+
+.yadisk-files a img  {
+	vertical-align: top;
+}
+
+.yadisk-files th img  {
+	vertical-align: top;
+}
+
+.yadisk-files td img  {
+	vertical-align: top;
+}
+
+.yadisk-files button  {
+	margin: 0;
+	width: auto;
+	overflow: visible;
+	cursor: pointer;
+}
+
+.yadisk-files input  {
+	margin: 0;
+}
+
+.yadisk-files select  {
+	margin: 0;
+}
+
+.yadisk-files textarea  {
+	margin: 0;
+	overflow: auto;
+	font-size: 13px;
+	position: relative;
+	z-index: 2;
+	font-family: helvetica,arial,tahoma,sans-serif;
+	height: 23px;
+	border: 1px solid #ccc;
+	padding: 1px 2px;
+	background-color: white;
+	color: #333;
+	line-height: 1.4em;
+	border-radius: 1px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset;
+	-webkit-transition: border .3s ease-in;
+	-moz-transition: border .3s ease-in;
+	-ms-transition: border .3s ease-in;
+	-o-transition: border .3s ease-in;
+	transition: border .3s ease-in;
+}
+
+.yadisk-files input[type=button]  {
+	cursor: pointer;
+}
+
+.yadisk-files input[type=submit]  {
+	cursor: pointer;
+}
+
+.yadisk-files input[type="radio"]  {
+	font-size: 110%;
+	position: relative;
+	top: -1px;
+}
+
+.yadisk-files input[type="checkbox"]  {
+	font-size: 110%;
+	position: relative;
+	top: -1px;
+}
+
+.yadisk-files hr  {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ddd;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files .group:after  {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.yadisk-files a:hover  {
+	color: #19334d;
+}
+
+.yadisk-files hgroup h1  {
+	margin-bottom: .1em;
+}
+
+.yadisk-files hgroup h2  {
+	margin-bottom: .1em;
+}
+
+.yadisk-files hgroup h3  {
+	margin-bottom: .1em;
+}
+
+.yadisk-files hgroup h4  {
+	margin-bottom: .1em;
+}
+
+.yadisk-files .subheader  {
+	font-size: 1.2em;
+	font-weight: normal;
+	color: #8f8f8f;
+	margin-bottom: 1em;
+}
+
+.yadisk-files ul ul  {
+	margin: 0 0 0 2em;
+}
+
+.yadisk-files ol ol  {
+	margin: 0 0 0 2em;
+}
+
+.yadisk-files ul ol  {
+	margin: 0 0 0 2em;
+}
+
+.yadisk-files ol ul  {
+	margin: 0 0 0 2em;
+}
+
+.yadisk-files ol ol li  {
+	list-style-type: lower-alpha;
+}
+
+.yadisk-files ol ol ol li  {
+	list-style-type: lower-roman;
+}
+
+.yadisk-files dl dt  {
+	font-weight: bold;
+}
+
+.yadisk-files blockquote small  {
+	color: #888;
+	font-style: italic;
+}
+
+.yadisk-files blockquote p  {
+	margin-bottom: 1em;
+	font-style: italic;
+}
+
+.yadisk-files blockquote cite  {
+	font-size: .85em;
+	line-height: 1;
+}
+
+.yadisk-files blockquote .pull-right  {
+	float: none;
+	text-align: right;
+	display: block;
+}
+
+.yadisk-files .row blockquote .pull-right  {
+	float: none;
+	text-align: right;
+	display: block;
+}
+
+.yadisk-files abbr[title]  {
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+
+.yadisk-files dfn[title]  {
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+
+.yadisk-files input[type="text"]  {
+	font-size: 13px;
+	position: relative;
+	z-index: 2;
+	font-family: helvetica,arial,tahoma,sans-serif;
+	height: 23px;
+	border: 1px solid #ccc;
+	margin: 0;
+	padding: 1px 2px;
+	background-color: white;
+	color: #333;
+	line-height: 1;
+	border-radius: 1px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset;
+	-webkit-transition: border .3s ease-in;
+	-moz-transition: border .3s ease-in;
+	-ms-transition: border .3s ease-in;
+	-o-transition: border .3s ease-in;
+	transition: border .3s ease-in;
+}
+
+.yadisk-files input[type="password"]  {
+	font-size: 13px;
+	position: relative;
+	z-index: 2;
+	font-family: helvetica,arial,tahoma,sans-serif;
+	height: 23px;
+	border: 1px solid #ccc;
+	margin: 0;
+	padding: 1px 2px;
+	background-color: white;
+	color: #333;
+	line-height: 1;
+	border-radius: 1px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset;
+	-webkit-transition: border .3s ease-in;
+	-moz-transition: border .3s ease-in;
+	-ms-transition: border .3s ease-in;
+	-o-transition: border .3s ease-in;
+	transition: border .3s ease-in;
+}
+
+.yadisk-files input[type="email"]  {
+	font-size: 13px;
+	position: relative;
+	z-index: 2;
+	font-family: helvetica,arial,tahoma,sans-serif;
+	height: 23px;
+	border: 1px solid #ccc;
+	margin: 0;
+	padding: 1px 2px;
+	background-color: white;
+	color: #333;
+	line-height: 1;
+	border-radius: 1px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset;
+	-webkit-transition: border .3s ease-in;
+	-moz-transition: border .3s ease-in;
+	-ms-transition: border .3s ease-in;
+	-o-transition: border .3s ease-in;
+	transition: border .3s ease-in;
+}
+
+.yadisk-files tfoot th  {
+	background-color: #f2f2f2;
+}
+
+.yadisk-files tfoot td  {
+	background-color: #f2f2f2;
+}
+
+.yadisk-files table caption  {
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-left: .5em;
+	color: #666;
+}
+
+.yadisk-files table.simple td  {
+	border: 0;
+	padding: .75em .7em .75em 0;
+}
+
+.yadisk-files table.simple th  {
+	border: 0;
+	padding: .75em .7em .75em 0;
+}
+
+.yadisk-files table.bordered td  {
+	border: 1px solid #ddd;
+}
+
+.yadisk-files table.bordered th  {
+	border: 1px solid #ddd;
+}
+
+.yadisk-files table.stroked td  {
+	border-bottom: 1px solid #eee;
+}
+
+.yadisk-files table.stroked th  {
+	border-bottom: 1px solid #eee;
+}
+
+.yadisk-files table.striped tbody tr:nth-child(odd) td  {
+	background-color: #f8f8f8;
+}
+
+.yadisk-files table.hovered tbody tr:hover td  {
+	background-color: #f6f6f6;
+}
+
+.yadisk-files table.hovered thead tr:hover th  {
+	background-color: #f6f6f6;
+}
+
+.yadisk-files .thead-gray td  {
+	background-color: #f0f0f0;
+}
+
+.yadisk-files .thead-gray th  {
+	background-color: #f0f0f0;
+}
+
+.yadisk-files .thead-black td  {
+	font-weight: normal;
+	color: rgba(255,255,255,0.9);
+	background-color: #222;
+}
+
+.yadisk-files .thead-black th  {
+	font-weight: normal;
+	color: rgba(255,255,255,0.9);
+	background-color: #222;
+}
+
+.yadisk-files table.bordered .thead-black td  {
+	border: 1px solid #444;
+}
+
+.yadisk-files table.bordered .thead-black th  {
+	border: 1px solid #444;
+}
+
+.yadisk-files .forms label  {
+	display: block;
+	margin-bottom: 2px;
+}
+
+.yadisk-files .descr  {
+	color: #999;
+	font-size: .85em;
+	line-height: 1.5em;
+}
+
+.yadisk-files div.descr  {
+	margin: 4px 0;
+}
+
+.yadisk-files .columnar div.descr  {
+	margin-bottom: 10px;
+}
+
+.yadisk-files .forms ul  {
+	list-style: none;
+	margin: 0;
+}
+
+.yadisk-files .forms ul li  {
+	margin-bottom: 10px;
+}
+
+.yadisk-files .forms.columnar ul li  {
+	margin-bottom: 15px;
+}
+
+.yadisk-files fieldset.liner  {
+	border: 0;
+	padding: 0;
+}
+
+.yadisk-files fieldset.liner legend  {
+	padding: 0;
+	width: 100%;
+	padding-bottom: 12px;
+}
+
+.yadisk-files fieldset.liner legend span  {
+	padding: 0;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #eee;
+	display: block;
+}
+
+.yadisk-files .forms ul.multicolumn:after  {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.yadisk-files .forms ul.multicolumn li  {
+	float: left;
+	margin-right: 12px;
+	margin-bottom: 0;
+	line-height: 1.8em;
+}
+
+.yadisk-files .forms ul.multicolumn li label  {
+	margin-bottom: 0;
+}
+
+.yadisk-files .forms ul.multicolumn li.width-50  {
+	width: 48%;
+	margin-right: 2%;
+}
+
+.yadisk-files .forms ul.multicolumn li.width-33  {
+	width: 31%;
+	margin-right: 2%;
+}
+
+.yadisk-files .forms.columnar legend  {
+	margin-bottom: 1em;
+}
+
+.yadisk-files .forms.columnar label  {
+	float: none;
+	width: auto;
+	text-align: left;
+	margin-right: 20px;
+}
+
+.yadisk-files .forms.columnar .push  {
+	margin-left: 0;
+}
+
+.yadisk-files .forms.columnar div.descr  {
+	margin-left: 0;
+}
+
+.yadisk-files .forms.columnar li fieldset label  {
+	float: none;
+	width: auto;
+	text-align: left;
+	margin-right: 0;
+}
+
+.yadisk-files .forms.columnar li fieldset  {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	padding-left: 0;
+	position: static;
+	width: 100%;
+	text-align: left;
+}
+
+.yadisk-files .forms.columnar li fieldset section  {
+	padding: 0;
+	position: static;
+	width: 100%;
+	text-align: left;
+	left: 0;
+	top: 0;
+	padding-left: 0;
+}
+
+.yadisk-files .forms.columnar li fieldset section label  {
+	float: none;
+	width: auto;
+	margin-right: 0;
+	text-align: right;
+}
+
+.yadisk-files .forms.columnar li fieldset div.descr  {
+	margin-left: 0;
+}
+
+.yadisk-files .forms li.form-section  {
+	font-weight: bold;
+	border-bottom: 1px solid #eee;
+	padding: 1.5em 0 .7em 0;
+	font-size: 1.1em;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files .columnar li.form-section  {
+	padding-left: 170px;
+}
+
+.yadisk-files table.tableforms td  {
+	font-size: 90%;
+	padding: 1px 10px 3px 0!important;
+	border: 0;
+}
+
+.yadisk-files table.tableforms tr.labels td  {
+	padding-top: .8em!important;
+	font-weight: bold;
+}
+
+.yadisk-files .error  {
+	margin-left: 5px;
+	font-weight: normal;
+	font-size: .85em;
+	color: #da3e5a;
+}
+
+.yadisk-files .success  {
+	margin-left: 5px;
+	font-weight: normal;
+	font-size: .85em;
+	color: #18a011;
+}
+
+.yadisk-files input.input-error  {
+	border-color: #da3e5a;
+	box-shadow: 0 0 0 2px rgba(218,62,90,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files textarea.input-error  {
+	border-color: #da3e5a;
+	box-shadow: 0 0 0 2px rgba(218,62,90,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files select.input-error  {
+	border-color: #da3e5a;
+	box-shadow: 0 0 0 2px rgba(218,62,90,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files .input-error  {
+	border-color: #da3e5a;
+	box-shadow: 0 0 0 2px rgba(218,62,90,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files input.input-success  {
+	border-color: #18a011;
+	box-shadow: 0 0 0 2px rgba(24,160,17,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files textarea.input-success  {
+	border-color: #18a011;
+	box-shadow: 0 0 0 2px rgba(24,160,17,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files select.input-success  {
+	border-color: #18a011;
+	box-shadow: 0 0 0 2px rgba(24,160,17,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files .input-success  {
+	border-color: #18a011;
+	box-shadow: 0 0 0 2px rgba(24,160,17,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files input.input-gray  {
+	border-color: #ccc;
+	box-shadow: 0 0 0 2px rgba(204,204,204,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files textarea.input-gray  {
+	border-color: #ccc;
+	box-shadow: 0 0 0 2px rgba(204,204,204,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files select.input-gray  {
+	border-color: #ccc;
+	box-shadow: 0 0 0 2px rgba(204,204,204,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files .input-gray  {
+	border-color: #ccc;
+	box-shadow: 0 0 0 2px rgba(204,204,204,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files input:focus  {
+	outline: 0;
+	border-color: #5ca9e4;
+	box-shadow: 0 0 0 2px rgba(70,161,231,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files textarea:focus  {
+	outline: 0;
+	border-color: #5ca9e4;
+	box-shadow: 0 0 0 2px rgba(70,161,231,0.3),0 1px 2px rgba(0,0,0,0.2) inset;
+}
+
+.yadisk-files input.input-search  {
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 0;
+	border-radius: 15px;
+}
+
+.yadisk-files .input-append  {
+	display: inline-block;
+	background-color: #eee;
+	height: 23px;
+	border: 1px solid #ccc;
+	margin: 0;
+	padding: 1px 8px;
+	color: #333;
+	font-size: 14px;
+	line-height: 23px;
+	position: relative;
+	z-index: 1;
+	margin-left: -1px;
+}
+
+.yadisk-files .input-prepend  {
+	display: inline-block;
+	background-color: #eee;
+	height: 23px;
+	border: 1px solid #ccc;
+	margin: 0;
+	padding: 1px 8px;
+	color: #333;
+	font-size: 14px;
+	line-height: 23px;
+	margin-right: -1px;
+}
+
+.yadisk-files .btn  {
+	position: relative;
+	cursor: pointer;
+	outline: 0;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	font-family: arial,helvetica,sans-serif;
+	line-height: 1;
+	font-size: 13px;
+	font-weight: normal;
+	padding: 6px 16px;
+	border-radius: 4px;
+	background-color: #f3f3f3;
+	background-image: linear-gradient(top,#fff,#e1e1e1);
+	filter: progid;
+	border: 1px solid #dadada;
+	border-left: 1px solid #d2d2d2;
+	border-right: 1px solid #d2d2d2;
+	border-bottom-color: #a9a9a9;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.15),inset 0 1px 1px 0 rgba(255,255,255,0.6);
+	text-shadow: 0 1px 0 #fff;
+	color: #000;
+}
+
+.yadisk-files .btn:hover  {
+	color: #000;
+	filter: none;
+	background: #eee;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+	text-decoration: none;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+
+.yadisk-files .btn-big.btn-active  {
+	padding: 11px 25px;
+}
+
+.yadisk-files .btn-big.btn-active:hover  {
+	padding: 11px 25px;
+}
+
+.yadisk-files .btn-active  {
+	box-shadow: 0 2px 4px rgba(0,0,0,0.4) inset;
+	color: #555;
+	border: 0;
+	background: 0;
+	filter: none;
+	background-color: #ddd;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+	padding: 7px 17px 8px 17px;
+}
+
+.yadisk-files .btn-active:hover  {
+	box-shadow: 0 2px 4px rgba(0,0,0,0.4) inset;
+	color: #555;
+	border: 0;
+	background: 0;
+	filter: none;
+	background-color: #ddd;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+	padding: 7px 17px 8px 17px;
+}
+
+.yadisk-files .btn-small  {
+	padding: 4px 12px;
+	font-size: 11px;
+}
+
+.yadisk-files .btn-small.btn-active  {
+	padding: 5px 12px;
+}
+
+.yadisk-files .btn-big  {
+	padding: 10px 24px;
+	font-size: 20px;
+}
+
+.yadisk-files .btn-square  {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.yadisk-files .btn-round  {
+	border-radius: 0 \0;
+}
+
+.yadisk-files .btn-full  {
+	width: 100%;
+}
+
+.yadisk-files .btn-group  {
+	display: inline-block;
+	margin-right: 2px;
+	vertical-align: bottom;
+}
+
+.yadisk-files .btn-group:after  {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.yadisk-files .btn-group>.btn  {
+	float: left;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	margin-left: -1px;
+}
+
+.yadisk-files .btn-group>input  {
+	float: left;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	margin-left: -1px;
+}
+
+.yadisk-files .btn-group>.btn:first-child  {
+	border-radius: 4px 0 0 4px;
+}
+
+.yadisk-files .btn-group>.btn:last-child  {
+	border-radius: 0 4px 4px 0;
+}
+
+.yadisk-files .btn-group>.btn.btn-round:first-child  {
+	border-radius: 15px 0 0 15px;
+}
+
+.yadisk-files .btn-group>.input-search:first-child  {
+	border-radius: 15px 0 0 15px;
+}
+
+.yadisk-files .btn-group>.btn.btn-round:last-child  {
+	border-radius: 0 15px 15px 0;
+}
+
+.yadisk-files .btn-group>.input-search:last-child  {
+	border-radius: 0 15px 15px 0;
+}
+
+.yadisk-files .btn-append  {
+	margin-left: -2px;
+	border-radius: 0 4px 4px 0;
+}
+
+.yadisk-files .btn.disabled  {
+	border: 0;
+	filter: none;
+	background: 0;
+	background-color: #e9e9e9;
+	opacity: .6;
+	cursor: default;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.6);
+}
+
+.yadisk-files .btn[disabled]  {
+	border: 0;
+	filter: none;
+	background: 0;
+	background-color: #e9e9e9;
+	opacity: .6;
+	cursor: default;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.6);
+}
+
+.yadisk-files @-moz-document url-prefix("http://")  {
+	input[type=submit].btn: ;
+}
+
+.yadisk-files .row  {
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files .container.row  {
+	margin-bottom: 0;
+}
+
+.yadisk-files .container:after  {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.yadisk-files .row:after  {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.yadisk-files .half  {
+	margin-left: 3.1914893617021276%;
+	float: left;
+	min-height: 1px;
+	width: 48.40425531914894%;
+}
+
+.yadisk-files .third  {
+	margin-left: 3.1914893617021276%;
+	float: left;
+	min-height: 1px;
+	width: 31.205673758865245%;
+}
+
+.yadisk-files .quarter  {
+	margin-left: 3.1914893617021276%;
+	float: left;
+	min-height: 1px;
+	width: 22.606382978723403%;
+}
+
+.yadisk-files .fifth  {
+	margin-left: 3.1914893617021276%;
+	float: left;
+	min-height: 1px;
+	width: 17.4468085106383%;
+}
+
+.yadisk-files .sixth  {
+	margin-left: 3.1914893617021276%;
+	float: left;
+	min-height: 1px;
+	width: 14.007092198581558%;
+}
+
+.yadisk-files .twothird  {
+	margin-left: 3.1914893617021276%;
+	float: left;
+	min-height: 1px;
+	width: 65.60283687943262%;
+}
+
+.yadisk-files .twofifth  {
+	margin-left: 3.1914893617021276%;
+	float: left;
+	min-height: 1px;
+	width: 38.08510638297872%;
+}
+
+.yadisk-files .threefifth  {
+	margin-left: 3.1914893617021276%;
+	float: left;
+	min-height: 1px;
+	width: 58.72340425531915%;
+}
+
+.yadisk-files .fourfifth  {
+	margin-left: 3.1914893617021276%;
+	float: left;
+	min-height: 1px;
+	width: 79.36170212765958%;
+}
+
+.yadisk-files .fivesixth  {
+	margin-left: 3.1914893617021276%;
+	float: left;
+	min-height: 1px;
+	width: 82.8014184397163%;
+}
+
+.yadisk-files .threequarter  {
+	margin-left: 3.1914893617021276%;
+	float: left;
+	min-height: 1px;
+	width: 74.20212765957446%;
+}
+
+.yadisk-files .half:first-child  {
+	margin-left: 0;
+}
+
+.yadisk-files .third:first-child  {
+	margin-left: 0;
+}
+
+.yadisk-files .quarter:first-child  {
+	margin-left: 0;
+}
+
+.yadisk-files .fifth:first-child  {
+	margin-left: 0;
+}
+
+.yadisk-files .sixth:first-child  {
+	margin-left: 0;
+}
+
+.yadisk-files .twothird:first-child  {
+	margin-left: 0;
+}
+
+.yadisk-files .twofifth:first-child  {
+	margin-left: 0;
+}
+
+.yadisk-files .threefifth:first-child  {
+	margin-left: 0;
+}
+
+.yadisk-files .fourfifth:first-child  {
+	margin-left: 0;
+}
+
+.yadisk-files .fivesixth:first-child  {
+	margin-left: 0;
+}
+
+.yadisk-files .threequarter:first-child  {
+	margin-left: 0;
+}
+
+.yadisk-files .push-half  {
+	position: relative;
+	left: 0;
+}
+
+.yadisk-files .push-threequarter  {
+	position: relative;
+	left: 0;
+}
+
+.yadisk-files .push-quarter  {
+	position: relative;
+	left: 0;
+}
+
+.yadisk-files .push-third  {
+	position: relative;
+	left: 0;
+}
+
+.yadisk-files .push-twothird  {
+	position: relative;
+	left: 0;
+}
+
+.yadisk-files .push-fifth  {
+	position: relative;
+	left: 0;
+}
+
+.yadisk-files .push-twofifth  {
+	position: relative;
+	left: 0;
+}
+
+.yadisk-files .push-threefifth  {
+	position: relative;
+	left: 0;
+}
+
+.yadisk-files .push-fourfifth  {
+	position: relative;
+	left: 0;
+}
+
+.yadisk-files .push-sixth  {
+	position: relative;
+	left: 0;
+}
+
+.yadisk-files .push-fivesixth  {
+	position: relative;
+	left: 0;
+}
+
+.yadisk-files .split .half  {
+	margin-left: 0;
+	width: 50%;
+}
+
+.yadisk-files .split .third  {
+	margin-left: 0;
+	width: 33.3%;
+}
+
+.yadisk-files .split .quarter  {
+	margin-left: 0;
+	width: 25%;
+}
+
+.yadisk-files .split .fifth  {
+	margin-left: 0;
+	width: 20%;
+}
+
+.yadisk-files .split .sixth  {
+	margin-left: 0;
+	width: 16.6%;
+}
+
+.yadisk-files .split .twothird  {
+	margin-left: 0;
+	width: 66.6%;
+}
+
+.yadisk-files .split .twofifth  {
+	margin-left: 0;
+	width: 40%;
+}
+
+.yadisk-files .split .threefifth  {
+	margin-left: 0;
+	width: 60%;
+}
+
+.yadisk-files .split .fourfifth  {
+	margin-left: 0;
+	width: 80%;
+}
+
+.yadisk-files .split .fivesixth  {
+	margin-left: 0;
+	width: 83.4%;
+}
+
+.yadisk-files .split .threequarter  {
+	margin-left: 0;
+	width: 75%;
+}
+
+.yadisk-files .inner  {
+	padding: 1.5em;
+}
+
+.yadisk-files .inner-left  {
+	padding-left: 1.5em;
+}
+
+.yadisk-files .inner-right  {
+	padding-right: 1.5em;
+}
+
+.yadisk-files .inner-nobottom  {
+	padding-bottom: 1px;
+}
+
+.yadisk-files .inner-double  {
+	padding: 3em;
+}
+
+.yadisk-files .inner-double-left  {
+	padding-left: 3em;
+}
+
+.yadisk-files .inner-double-right  {
+	padding-right: 3em;
+}
+
+.yadisk-files .inner-double-nobottom  {
+	padding-bottom: 1px;
+}
+
+.yadisk-files .row .push-right  {
+	float: right;
+}
+
+.yadisk-files .row .centered  {
+	float: none;
+	margin: 0 auto;
+}
+
+.yadisk-files .block-two  {
+	list-style: none;
+	margin-left: 0;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files .block-three  {
+	list-style: none;
+	margin-left: 0;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files .block-four  {
+	list-style: none;
+	margin-left: 0;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files .block-five  {
+	list-style: none;
+	margin-left: 0;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files .block-six  {
+	list-style: none;
+	margin-left: 0;
+	margin-bottom: 1.5em;
+}
+
+.yadisk-files .block-two:after  {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.yadisk-files .block-three:after  {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.yadisk-files .block-four:after  {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.yadisk-files .block-five:after  {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.yadisk-files .block-six:after  {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.yadisk-files .block-two>li  {
+	height: auto;
+	float: none;
+	margin-bottom: 1.5em;
+	margin-left: 3.1914893617021276%;
+	width: 100%;
+	margin: 0;
+}
+
+.yadisk-files .block-three>li  {
+	height: auto;
+	float: none;
+	margin-bottom: 1.5em;
+	margin-left: 3.1914893617021276%;
+	width: 100%;
+	margin: 0;
+}
+
+.yadisk-files .block-four>li  {
+	height: auto;
+	float: none;
+	margin-bottom: 1.5em;
+	margin-left: 3.1914893617021276%;
+	width: 100%;
+	margin: 0;
+}
+
+.yadisk-files .block-five>li  {
+	height: auto;
+	float: none;
+	margin-bottom: 1.5em;
+	margin-left: 3.1914893617021276%;
+	width: 100%;
+	margin: 0;
+}
+
+.yadisk-files .block-six>li  {
+	height: auto;
+	float: none;
+	margin-bottom: 1.5em;
+	margin-left: 3.1914893617021276%;
+	width: 100%;
+	margin: 0;
+}
+
+.yadisk-files .image-left  {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+.yadisk-files .image-right  {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+.yadisk-files .image-left img  {
+	position: relative;
+	top: .4em;
+}
+
+.yadisk-files .image-right img  {
+	position: relative;
+	top: .4em;
+}
+
+.yadisk-files p.lead  {
+	font-size: 1.2em;
+}
+
+.yadisk-files .supersmall  {
+	font-size: .7em;
+}
+
+.yadisk-files .small  {
+	font-size: .85em;
+}
+
+.yadisk-files .big  {
+	font-size: 1.2em;
+}
+
+.yadisk-files input.big  {
+	padding: 2px 0;
+	font-size: 1.2em;
+}
+
+.yadisk-files .text-centered  {
+	text-align: center;
+}
+
+.yadisk-files .uppercase  {
+	text-transform: uppercase;
+}
+
+.yadisk-files .nowrap  {
+	white-space: nowrap;
+}
+
+.yadisk-files .clear  {
+	clear: both;
+}
+
+.yadisk-files .last  {
+	margin-right: 0!important;
+}
+
+.yadisk-files .end  {
+	margin-bottom: 0!important;
+}
+
+.yadisk-files .handle  {
+	cursor: move;
+}
+
+.yadisk-files .normal  {
+	font-weight: normal;
+}
+
+.yadisk-files .bold  {
+	font-weight: bold;
+}
+
+.yadisk-files .italic  {
+	font-style: italic;
+}
+
+.yadisk-files .req  {
+	font-weight: normal;
+	color: #da3e5a;
+}
+
+.yadisk-files .required  {
+	font-weight: normal;
+	color: #da3e5a;
+}
+
+.yadisk-files .highlight  {
+	background-color: #e5ecf5!important;
+}
+
+.yadisk-files .width-33  {
+	width: 33%;
+}
+
+.yadisk-files .width-50  {
+	width: 50%;
+}
+
+.yadisk-files .width-100  {
+	width: 100%;
+}
+
+.yadisk-files input.width-100  {
+	width: 98.6%;
+}
+
+.yadisk-files textarea.width-100  {
+	width: 99.4%;
+}
+
+.yadisk-files select.width-100  {
+	width: 99.4%;
+}
+
+.yadisk-files .black  {
+	color: #000;
+}
+
+.yadisk-files .gray-dark  {
+	color: #555;
+}
+
+.yadisk-files .gray  {
+	color: #777;
+}
+
+.yadisk-files .gray-light  {
+	color: #999;
+}
+
+.yadisk-files .white  {
+	color: #fff;
+}
+
+.yadisk-files .red  {
+	color: #da3e5a;
+}
+
+.yadisk-files .green  {
+	color: #18a011;
+}
+
+.yadisk-files a.white:hover  {
+	color: rgba(255,255,255,0.8);
+}
+
+.yadisk-files a.green:hover  {
+	color: #000;
+}
+
+.yadisk-files a.red:hover  {
+	color: #000;
+}
+
+.yadisk-files a.error:hover  {
+	color: #000;
+}
+
+.yadisk-files @media only screen and (max-width:767px)  {
+}
+
+.yadisk-files .row .pull-right  {
+	float: none;
+}
+
+.yadisk-files .forms .multicolumn li  {
+	float: none;
+	margin-right: 0;
+}
+
+.yadisk-files .forms .multicolumn li.width-50  {
+	width: 100%;
+}
+
+.yadisk-files .forms .multicolumn li.width-33  {
+	width: 100%;
+}
+
+.yadisk-files .forms fieldset  {
+	padding: 0;
+	padding-top: 1em;
+	border: 0;
+}
+
+.yadisk-files .forms fieldset legend  {
+	padding: 0;
+}
+

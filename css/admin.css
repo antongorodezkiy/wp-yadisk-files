@@ -4,7 +4,7 @@
 	clear: both;
 }
 
-.yadisk-files-bl {
+.yadisk-files .yadisk-files-bl {
 	background: #f3f3f3; /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YzZjNmMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkZmRmZGYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -18,10 +18,20 @@
 
 	border-radius: 6px / 4px;
 	box-shadow: 0px 2px 5px #333;
-	padding:15px 30px;
 	margin: 15px 0;
 }
 
+	.yadisk-files .yadisk-files-bl .in {
+		padding:5px 30px;
+	}
+	
+	.yadisk-files .yadisk-files-bl .hdr {
+		padding: 3px 30px;
+		height:40px;
+		line-height:38px;
+		border-bottom: 1px ridge #fff;
+	}
+	
 .yadisk-files .hidden {
 	display: hidden;
 }
@@ -32,6 +42,23 @@
 
 .yadisk-files label {
 	line-height: 30px;
+}
+
+.yadisk-files iframe {
+	height: 32px;
+}
+
+.yadisk-files .nobutton {
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+.yadisk-files h2,
+.yadisk-files h3 {
+	margin-bottom: 0;
+	line-height:38px;
+	font-weight: normal;
 }
 
 	.yadisk-btn {
@@ -68,4 +95,20 @@
 		.yadisk-btn:active {
 		  -webkit-box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white;
 		  box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white; }
+
+.yadisk-files .icons {
+    background: url('../img/icons-sprite.png') no-repeat top left;
+	display: block;
+	padding-top: 130px;
+	text-align: center;
+}
+
+.yadisk-files .icons.about{ background-position: 0 0; width: 128px; height: 20px; } 
+.yadisk-files .icons.blog{ background-position: 0 -178px; width: 128px; height: 34px; } 
+.yadisk-files .icons.coffee{ background-position: 0 -327px; width: 128px; height: 20px; } 
+.yadisk-files .icons.github{ background-position: 0 -505px; width: 128px; height: 20px; } 
+.yadisk-files .icons.keys{ background-position: 0 -683px; width: 128px; height: 20px; } 
+.yadisk-files .icons.support{ background-position: 0 -861px; width: 128px; height: 20px; } 
+.yadisk-files .icons.thanks{ background-position: 0 -1039px; width: 128px; height: 114px; } 
+.yadisk-files .icons.wordpress{ background-position: 0 -1203px; width: 128px; height: 20px; } 
 

@@ -1,8 +1,8 @@
 <?php if (!defined('WPINC')) die();
 
 	function yadisk_files_admin_register_head() {
-		wp_enqueue_style('kube.yadisk-files', plugins_url('css/kube.css', __FILE__ ));
-		wp_enqueue_style('admin.yadisk-files', plugins_url('css/admin.css', __FILE__ ));
+		wp_enqueue_style('kube.yadisk-files', plugins_url('css/kube.yadisk-files.css', __FILE__ ));
+		wp_enqueue_style('admin.yadisk-files', plugins_url('css/admin.css', __FILE__ ), array('kube.yadisk-files'));
 		wp_register_style('jq-ui','http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css');
 		wp_enqueue_style('jq-ui');
 	}
