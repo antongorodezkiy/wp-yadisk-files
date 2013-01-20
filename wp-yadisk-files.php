@@ -7,7 +7,7 @@
 	Author: AntonGorodezkiy
 	Author URI: http://kozachek.net/
 	License: GNU GPL 2
-	Text Domain: yadisk_files
+	Text Domain: wp-yadisk-files
 */
 
 define('YADISK_FILES_APPPATH',dirname(__FILE__));
@@ -20,7 +20,7 @@ add_action('init', 'yadisk_files_front_register_head');
 		return sprintf('
 			<div class="yadisk-download-container">
 				<a class="yadisk-download" href="%s" title="%s" target="_blank">
-					Скачать %s с Яндекс.Диск
+					'.__('Скачать %s с Яндекс.Диск','wp-yadisk-files').'
 				</a>
 			</div>
 		',$atts['href'],$atts['size'],$atts['name']);
@@ -40,7 +40,7 @@ if (is_admin())
 
 // Create Text Domain For Translations
 	function yadiskFilesLocalization() {
-		load_plugin_textdomain('yadisk_files', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/'.get_locale().'/' );
+		load_plugin_textdomain('wp-yadisk-files', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/'.get_locale().'/' );
 	}
 	add_action('wp_loaded', 'yadiskFilesLocalization');
 	
@@ -54,7 +54,7 @@ if (is_admin())
 		require(YADISK_FILES_APPPATH.'/libraries/yadisk.class.php');
 	}
 	include_once(YADISK_FILES_APPPATH.'/controllers/yadiskapi.php');
-	$YadiskAPI = new YadiskAPI(get_option('yadisk-files-login'), get_option('yadisk-files-pass'));
+	$YadiskAPI = new YadiskAPI(get_option('wp-yadisk-files-login'), get_option('wp-yadisk-files-pass'));
 
 /* Notify */
 	if(!class_exists('Notify')) {

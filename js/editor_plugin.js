@@ -20,7 +20,7 @@
 
 			// Register buttons
 			ed.addButton('YadiskFiles', {
-				title : YadiskFiles.lang['Yadisk Files'],
+				title : YadiskFiles.lang['Choose file'],
 				image : url + '/../img/icon.png',
 				cmd : 'YadiskFiles'
 			});

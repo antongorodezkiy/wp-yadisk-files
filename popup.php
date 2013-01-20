@@ -16,7 +16,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title><?=__('Yadisk Files', 'yadisk-files')?></title>
+	<title><?=__('Yadisk Files', 'wp-yadisk-files')?></title>
 	<?php wp_head(); ?>
 	<script type="text/javascript">
 		var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
@@ -27,21 +27,21 @@
 	<link rel="stylesheet" href="css/kube.css" />
 	<link rel="stylesheet" href="css/popup.css" />
 </head>
-<body class="yadisk-files">
+<body class="wp-yadisk-files">
 	<div class="loading hidden"></div>
 	<div class="loading_back hidden"></div>
 	<form>
 		<div class="breadcrumbs"></div>
-		<?php if (!get_option('yadisk-files-login') or !get_option('yadisk-files-pass')) { ?>
-			<a href="#"><?=__('Need to set login and password in Yadisk Files plugin settings','yadisk-files')?></a>
+		<?php if (!get_option('wp-yadisk-files-login') or !get_option('wp-yadisk-files-pass')) { ?>
+			<a href="#"><?=__('Need to set login and password in Yadisk Files plugin settings','wp-yadisk-files')?></a>
 		<?php }
 		else { ?>
 			<div class="container">
 				<table class="width-100 bordered">
 					<thead class="thead-gray">
 						<tr>
-							<th><?=__('Filename', 'yadisk-files')?></th>
-							<th><?=__('Size', 'yadisk-files')?></th>
+							<th><?=__('Filename', 'wp-yadisk-files')?></th>
+							<th><?=__('Size', 'wp-yadisk-files')?></th>
 						</tr>
 					</thead>
 					<tbody class="content">

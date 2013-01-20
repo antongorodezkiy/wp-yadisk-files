@@ -22,16 +22,6 @@ body  {
 
 }
 
-.wp-yadisk-files div  {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
-	font-style: normal;
-}
 
 .wp-yadisk-files span  {
 	margin: 0;
@@ -40,7 +30,6 @@ body  {
 	outline: 0;
 	font-size: 100%;
 	vertical-align: baseline;
-	background: transparent;
 	font-style: normal;
 }
 
@@ -78,7 +67,6 @@ body  {
 	outline: 0;
 	font-size: 100%;
 	vertical-align: baseline;
-	background: transparent;
 	font-style: normal;
 	line-height: 1.5em;
 	margin-bottom: 1.5em;

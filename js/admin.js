@@ -21,7 +21,7 @@ var currentDir = '/';
 		function cd(path) {
 			
 			Loading.show();
-			console.log('cd '+path);
+			
 		
 			var pathParts = [];
 			var newPathParts = [];
@@ -98,7 +98,7 @@ var currentDir = '/';
 				Loading.hide();
 				
 				var json = $.parseJSON(data);
-				console.log(json);
+				
 				if (notifyIsSuccess(json)) {
 					
 					tinyMCEPopup.execCommand('mceInsertContent', false, '[YadiskFiles href="'+json.data.href+'" name="'+name+'" size="'+size+'"]');
@@ -129,8 +129,8 @@ var currentDir = '/';
 	// tabs
 		//$(".tabs").tabs();
 		$(".yadisk-about-activator").click(function(){
-			$(".yadisk-files-about").dialog({
-				title: $(".yadisk-files-about").attr("title"),
+			$(".wp-yadisk-files-about").dialog({
+				title: $(".wp-yadisk-files-about").attr("title"),
 				width: 600,
 				height: 350
 			});

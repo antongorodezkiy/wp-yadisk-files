@@ -41,11 +41,11 @@ class YadiskAPI {
 		$this->yadisk->set_debug(true);
 		
 		if (!$this->yadisk->open())
-			$notify->returnError('Error: could not open server connection');
+			$notify->returnError(__('Error: could not open server connection','wp-yadisk-files'));
 		
 		// check if server supports webdav rfc 2518
 		if (!$this->yadisk->check_webdav())
-			$notify->returnError('Error: server does not support webdav or user/password may be wrong');
+			$notify->returnError(__('Error: server does not support webdav or user/password may be wrong','wp-yadisk-files'));
 		
 		
 	}
@@ -66,34 +66,35 @@ class YadiskAPI {
 
 		$folders = array();
 		$files = array();
-		foreach ($dir as $key => $file) {
-			
-			if ($key == 0)
-				continue;
-			
-			if (self::entryIsDir($file))
-				$folders[] = array(
-					'name' => $file['dav::multistatus_dav::response_dav::propstat_dav::prop_dav::displayname_'],
-					'ext' => '',
-					'href' => $file['href'],
-					'size' => $file['getcontentlength']
-				);
-			else
-				$files[] = array(
-					'name' => $file['dav::multistatus_dav::response_dav::propstat_dav::prop_dav::displayname_'],
-					'ext' => pathinfo($file['dav::multistatus_dav::response_dav::propstat_dav::prop_dav::displayname_'], PATHINFO_EXTENSION),
-					'href' => $file['href'],
-					'size' => formatBytes($file['getcontentlength'])
-				);
+		if (!empty($dir)) {
+			foreach ($dir as $key => $file) {
+				
+				if ($key == 0)
+					continue;
+				
+				if (self::entryIsDir($file))
+					$folders[] = array(
+						'name' => $file['dav::multistatus_dav::response_dav::propstat_dav::prop_dav::displayname_'],
+						'ext' => '',
+						'href' => $file['href'],
+						'size' => $file['getcontentlength']
+					);
+				else
+					$files[] = array(
+						'name' => $file['dav::multistatus_dav::response_dav::propstat_dav::prop_dav::displayname_'],
+						'ext' => pathinfo($file['dav::multistatus_dav::response_dav::propstat_dav::prop_dav::displayname_'], PATHINFO_EXTENSION),
+						'href' => $file['href'],
+						'size' => formatBytes($file['getcontentlength'])
+					);
+			}
+	
+			$notify->setData(array('folders' => $folders, 'files' => $files));
 		}
-
-		$notify->setData(array('folders' => $folders, 'files' => $files));
-		
 		// return final message to user
 			if ($dir)
-				$notify->returnSuccess(__('Success', 'yadisk-files'));
+				$notify->returnSuccess(__('Success', 'wp-yadisk-files'));
 			else
-				$notify->returnError(__('Error listing '.$path, 'yadisk-files'));
+				$notify->returnError(__('Error listing ', 'wp-yadisk-files').$path);
 	}
 	
 	
@@ -116,9 +117,9 @@ class YadiskAPI {
 		
 		// return final message to user
 			if ($href)
-				$notify->returnSuccess(__('Success', 'yadisk-files'));
+				$notify->returnSuccess(__('Success', 'wp-yadisk-files'));
 			else
-				$notify->returnError(__('Error publishing '.$path, 'yadisk-files'));
+				$notify->returnError(__('Error publishing ', 'wp-yadisk-files').$path);
 	}
 	
 	
@@ -140,9 +141,9 @@ class YadiskAPI {
 		
 		// return final message to user
 			if ($dir)
-				$notify->returnSuccess(__('Success', 'yadisk-files'));
+				$notify->returnSuccess(__('Success', 'wp-yadisk-files'));
 			else
-				$notify->returnError(__('Error publishing '.$path, 'yadisk-files'));
+				$notify->returnError(__('Error publishing ', 'wp-yadisk-files').$path);
 	}
 
 }

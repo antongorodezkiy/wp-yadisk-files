@@ -1,0 +1,164 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-wp-yadisk-files v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-20 02:17+0300\n"
+"PO-Revision-Date: 2013-01-20 02:23+0300\n"
+"Last-Translator: Eduard Kozachek <eduard@kozachek.net>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../..\n"
+
+#: ../../popup.php:19
+msgid "Yadisk Files"
+msgstr "Yadisk Files"
+
+#: ../../popup.php:36
+msgid "Need to set login and password in Yadisk Files plugin settings"
+msgstr "Требуется установить логин и пароль для доступа к Яндекс.Диску в настройках плагина."
+
+#: ../../popup.php:43
+msgid "Filename"
+msgstr "Файл"
+
+#: ../../popup.php:44
+msgid "Size"
+msgstr "Размер"
+
+#: ../../wp-yadisk-files.php:23
+#, php-format
+msgid "Скачать %s с Яндекс.Диск"
+msgstr "Скачать %s с Яндекс.Диск"
+
+#: ../../assets.php:14
+msgid "Choose file"
+msgstr "Выберите файл"
+
+#: ../../controllers/yadiskapi.php:44
+msgid "Error: could not open server connection"
+msgstr "Ошибка: не получается открыть соединение с сервером"
+
+#: ../../controllers/yadiskapi.php:48
+msgid "Error: server does not support webdav or user/password may be wrong"
+msgstr "Ошибка: сервер не поддерживает webdav, а вероятнее логин и пароль не подходят"
+
+#: ../../controllers/yadiskapi.php:95
+#: ../../controllers/yadiskapi.php:120
+#: ../../controllers/yadiskapi.php:144
+msgid "Success"
+msgstr "Успешно"
+
+#: ../../controllers/yadiskapi.php:97
+msgid "Error listing "
+msgstr "Ошибка получения списка"
+
+#: ../../controllers/yadiskapi.php:122
+#: ../../controllers/yadiskapi.php:146
+msgid "Error publishing "
+msgstr "Ошибка опубликования"
+
+#: ../../views/settings.php:9
+#, fuzzy
+msgid "YaDisk Files"
+msgstr "Yadisk Files"
+
+#: ../../views/settings.php:22
+msgid "YaDisk Files Settings"
+msgstr "Насйтрока Yadisk Files"
+
+#: ../../views/settings.php:29
+msgid "Yadisk Login"
+msgstr "Яндекс.Диск логин"
+
+#: ../../views/settings.php:38
+msgid "Yadisk Password"
+msgstr "Яндекс.Диск пароль"
+
+#: ../../views/settings.php:49
+msgid "Save"
+msgstr "Сохранить"
+
+#: ../../views/settings.php:60
+msgid "Links"
+msgstr "Ссылки"
+
+#: ../../views/settings.php:66
+msgid "Yadisk Files Plugin on Wordpress"
+msgstr "Плагин Yadisk Files на Wordpress"
+
+#: ../../views/settings.php:69
+msgid "Yadisk Files Plugin on Author's site"
+msgstr "Плагин Yadisk Files на сайте автора"
+
+#: ../../views/settings.php:72
+msgid "Yadisk Files Plugin on Github"
+msgstr "Плагин Yadisk Files на Github"
+
+#: ../../views/settings.php:75
+msgid "Yadisk Files Plugin Support"
+msgstr "Поддержка плагина Yadisk Files"
+
+#: ../../views/settings.php:87
+msgid "About YaDisk Files"
+msgstr "О Yadisk Files"
+
+#: ../../views/settings.php:91
+msgid "This plugin is created for easy adding files from <a target=\"_blank\" href=\"http://disk.yandex.com/\">Yandex Disk</a> service to posts or pages of your wordpress site."
+msgstr "Плагин создан для лёгкого добавления файлов с <a target=\"_blank\" href=\"http://disk.yandex.com/\">Яндекс.Диска</a> в записи и страницы вашего wordpress сайта."
+
+#: ../../views/settings.php:92
+msgid "This plugin has no relation to <a target=\"_blank\" href=\"http://yandex.com\">Yandex Company</a>"
+msgstr "Плагин не имеет никакого отношения к <a target=\"_blank\" href=\"http://yandex.ru\">Компании Яндекс</a>"
+
+#: ../../views/settings.php:93
+msgid "This plugin is written by me, <a target=\"_blank\" href=\"mailto:antongorodezkiy@gmail.com\">AntonGorodezkiy</a>"
+msgstr "Плагин создал я, <a target=\"_blank\" href=\"mailto:antongorodezkiy@gmail.com\">AntonGorodezkiy</a>"
+
+#: ../../views/settings.php:94
+msgid "This plugin is totally free (and opensource!) now and forever. But if you like my plugin you can of course buy me a coffee :)"
+msgstr "Этот плагин абсолютно бесплатный (и с открытым исходным кодом!) сейчас и навсегда. Но если вам он понравился, вы конечно же можете купить мне кофе в знако благодарности :)"
+
+#: ../../views/settings.php:102
+msgid "Buy me a coffee"
+msgstr "Купить автору кофе"
+
+#: ../../views/settings.php:107
+msgid "Say \"Thanks\" to Author"
+msgstr "Сказать \"Спасибо\" автору"
+
+#: ../../views/settings.php:109
+msgid "Thank you"
+msgstr "Спасибо вам"
+
+#: ../../views/settings.php:122
+#: ../../views/settings.php:128
+#: ../../views/settings.php:131
+msgid "Thanks to"
+msgstr "Спасибо"
+
+#: ../../views/settings.php:128
+msgid "for a php webdav client library."
+msgstr "за php библиотеку webdav клиента."
+
+#: ../../views/settings.php:131
+msgid "for pretty icons for settings page."
+msgstr "за симпатичные иконки для страницы настроек."
+
+#: ../../views/settings.php:140
+msgid "About Wordpress Yadisk Files Plugin"
+msgstr "О плагине Wordpress Yadisk Files"
+
+#: ../../views/settings.php:141
+msgid "Wordpress Yadisk Files Plugin"
+msgstr "Wordpress Yadisk Files плагин"
+
+#: ../../views/settings.php:143
+msgid "Blog"
+msgstr "Блог"
+
