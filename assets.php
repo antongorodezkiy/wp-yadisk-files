@@ -5,7 +5,9 @@
 		wp_enqueue_style('admin.wp-yadisk-files', plugins_url('css/admin.css', __FILE__ ), array('kube.wp-yadisk-files'));
 		wp_register_style('jq-ui','http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css');
 		wp_enqueue_style('jq-ui');
-		
+	}
+	
+	function yadisk_files_js_settings() {
 		echo "
 			<script type='text/javascript'>
 				var YadiskFiles = {

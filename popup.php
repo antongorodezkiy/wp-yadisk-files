@@ -1,6 +1,12 @@
 <?php
 	include '../../../wp-blog-header.php';
 	
+	if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
+		header('404 Page not found',true, 404);
+		die();
+	}
+	
+	header('Content-Type: text/html; charset=UTF-8',true, 200);
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js');
 	wp_enqueue_script( 'jquery' );
@@ -24,7 +30,7 @@
 	<?=$notify->initJsCss()?>
 	<script type="text/javascript" src="js/admin.js"></script>
 	<script type="text/javascript" src="js/tiny_mce_popup.js"></script>
-	<link rel="stylesheet" href="css/kube.css" />
+	<link rel="stylesheet" href="css/kube.wp-yadisk-files.css" />
 	<link rel="stylesheet" href="css/popup.css" />
 </head>
 <body class="wp-yadisk-files">
@@ -32,6 +38,7 @@
 	<div class="loading_back hidden"></div>
 	<form>
 		<div class="breadcrumbs"></div>
+		<?=$notify->getMessages()?>
 		<?php if (!get_option('wp-yadisk-files-login') or !get_option('wp-yadisk-files-pass')) { ?>
 			<a href="#"><?=__('Need to set login and password in Yadisk Files plugin settings','wp-yadisk-files')?></a>
 		<?php }

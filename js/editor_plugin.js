@@ -30,8 +30,8 @@
 			return {
 				longname : 'YadiskFiles',
 				author : 'AntonGorodezkiy',
-                authorurl : 'http://kozachek.net/',
-                infourl : 'http://kozachek.net/',
+                authorurl : 'http://eduard.kozachek.net/',
+                infourl : 'http://eduard.kozachek.net/',
                 version : "1.0"
 			};
 		}

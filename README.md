@@ -1,2 +1,0 @@
-wordpress-yandex-disk
-=====================

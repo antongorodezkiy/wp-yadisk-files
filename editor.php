@@ -22,6 +22,6 @@
 	 
 	// Load the TinyMCE plugin : editor_plugin.js (wp2.5)
 	function add_yadisk_files_tinymce_plugin($plugin_array) {
-		$plugin_array['YadiskFiles'] = get_option('siteurl')."/wp-content/plugins/wp-yadisk-files/js/editor_plugin.js";
+		$plugin_array['YadiskFiles'] = plugins_url( 'js/editor_plugin.js' , __FILE__ );
 		return $plugin_array;
 	}

@@ -1,12 +1,12 @@
 <?php if (!defined('WPINC')) die();
 /*
 	Plugin Name: YaDisk Files
-	Plugin URI: 
-	Description: Wordpress Yandex Disk Files Plugin
+	Plugin URI: http://eduard.kozachek.net/projects/wordpress-projects/wp-yadisk-files-plugin/
+	Description: This plugin is created for easy adding files from <a target="_blank" href="http://disk.yandex.com/">Yandex Disk</a> service to posts or pages of your wordpress site.
 	Version: 1.0
 	Author: AntonGorodezkiy
-	Author URI: http://kozachek.net/
-	License: GNU GPL 2
+	Author URI: http://eduard.kozachek.net/
+	License: GPLv2
 	Text Domain: wp-yadisk-files
 */
 
@@ -65,8 +65,11 @@ if (is_admin())
 
 	
 /* styles and scripts */
+add_action('admin_print_styles', 'yadisk_files_js_settings');
+if (isset($_GET['page']) && $_GET['page'] == 'wp-yadisk-files') {
 	add_action('admin_print_styles', 'yadisk_files_admin_register_head');
 	add_action('admin_head','yadisk_files_add_admin_js_files');
+}
 
 	
 /* editor */

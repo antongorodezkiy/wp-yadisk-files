@@ -126,16 +126,6 @@ var currentDir = '/';
 		// функция проверки confirm
 		
 		
-	// tabs
-		//$(".tabs").tabs();
-		$(".yadisk-about-activator").click(function(){
-			$(".wp-yadisk-files-about").dialog({
-				title: $(".wp-yadisk-files-about").attr("title"),
-				width: 600,
-				height: 350
-			});
-		});
-		
 		
 	}); // ready
 })(jQuery);
