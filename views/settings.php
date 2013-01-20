@@ -1,8 +1,7 @@
 <?php if (!defined('WPINC')) die(); ?>
 
 <div class="wrap wp-yadisk-files row">
-    
-	<?=$notify->initJs(true)?>  
+
 	<?=$notify->getMessages()?>
 	
 	<h2>
