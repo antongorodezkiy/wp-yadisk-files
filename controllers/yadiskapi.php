@@ -145,6 +145,12 @@ class YadiskAPI {
 			else
 				$notify->returnError(__('Error publishing ', 'wp-yadisk-files').$path);
 	}
+	
+	
+	public function getPopupTemplate() {
+		include_once(YADISK_FILES_APPPATH.'/views/popup.php');
+		die();
+	}
 
 }
 

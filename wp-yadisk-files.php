@@ -66,12 +66,10 @@ if (is_admin())
 	
 /* styles and scripts */
 add_action('admin_print_styles', 'yadisk_files_js_settings');
-if (isset($_GET['page']) && $_GET['page'] == 'wp-yadisk-files') {
-	add_action('admin_print_styles', 'yadisk_files_admin_register_head');
-	add_action('admin_head','yadisk_files_add_admin_js_files');
-}
+add_action('admin_print_styles', 'yadisk_files_admin_register_head');
+add_action('admin_head','yadisk_files_add_admin_js_files');
 
-	
+
 /* editor */
 	include_once(YADISK_FILES_APPPATH.'/editor.php');
 	add_action('init', 'yadiskFilesAddButtons');
@@ -82,5 +80,5 @@ if (isset($_GET['page']) && $_GET['page'] == 'wp-yadisk-files') {
 	add_action('wp_ajax_yadisk_files_get_list', array($YadiskAPI, 'getList'));
 	add_action('wp_ajax_yadisk_files_upload', array($YadiskAPI, 'upload'));
 	add_action('wp_ajax_yadisk_files_publish', array($YadiskAPI, 'publish'));
-	
+	add_action('wp_ajax_yadisk_files_get_popup_template', array($YadiskAPI, 'getPopupTemplate'), 10, 'popup');
 }

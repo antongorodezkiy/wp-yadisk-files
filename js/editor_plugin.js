@@ -6,15 +6,7 @@
 			// Register commands
 			ed.addCommand('YadiskFiles', function() {
 				
-				ed.windowManager.open({
-					file : url + '/../popup.php',
-					width : 800,
-					height : 450,
-					inline : 1
-				}, {
-					baseURL : url
-				});
-
+				YadiskFiles.filesDialog(ed);
 				
 			});
 

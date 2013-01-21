@@ -1,25 +1,15 @@
 var YadiskFiles = YadiskFiles || {};
 
 var currentDir = '/';
+var editor;
 
 (function($) {
 	
 	$(document).ready(function()
 	{
 		
-		Loading = {
-			show: function() {
-				$(".loading").show();
-				$(".loading_back").show();
-			},
-			hide: function() {
-				$(".loading").hide();
-				$(".loading_back").hide();
-			}
-		};
-		
 		function cd(path) {
-			
+	
 			Loading.show();
 			
 		
@@ -31,7 +21,7 @@ var currentDir = '/';
 			else
 				pathParts = path.split("/");
 			
-			$.post(ajaxurl, { 'action': 'yadisk_files_get_list', 'path': path }, function(data) {
+			$.post(YadiskFiles.url['ajaxurl'], { 'action': 'yadisk_files_get_list', 'path': path }, function(data) {
 				
 				Loading.hide();
 				
@@ -39,7 +29,7 @@ var currentDir = '/';
 				var html = '';
 				
 				if (notifyIsSuccess(json)) {
-				
+					
 					if (path != '/') {
 						html += '<tr><td><a href="#" class="in dir file arrow_up" data-href="/"><span class="file-icon"></span>/</a></td><td>&nbsp;</td></tr>';
 						
@@ -67,15 +57,27 @@ var currentDir = '/';
 						html += '<tr><td><a href="#" class="in file '+value.ext+'" data-href="'+value.href+'" data-size="'+value.size+'"><span class="file-icon"></span>'+value.name+'</a></td><td><span class="in">'+value.size+'</span></td></tr>';
 					});
 					
-					$(".content").html(html);
+					
+					$(".content",".wp-yadisk-files-filesDialog").html(html);
 				}
 				
 				return false;
 			});
 		}
-	
-		cd(currentDir);
-		$(".dir").live("click",function(event)
+		
+		Loading = {
+			show: function() {
+				$(".loading",".wp-yadisk-files").show();
+				$(".loading_back",".wp-yadisk-files").show();
+			},
+			hide: function() {
+				$(".loading",".wp-yadisk-files").hide();
+				$(".loading_back",".wp-yadisk-files").hide();
+			}
+		};
+		
+		
+		$(".dir",".wp-yadisk-files").live("click",function(event)
 		{
 			var targetDir = $(this).attr('data-href');
 			
@@ -85,7 +87,7 @@ var currentDir = '/';
 		});
 		
 		
-		$(".file").live("click",function(event)
+		$(".file",".wp-yadisk-files").live("click",function(event)
 		{
 			Loading.show();
 			
@@ -93,7 +95,7 @@ var currentDir = '/';
 			var size = $(this).attr('data-size');
 			var path = $(this).attr('data-href');
 			
-			$.post(ajaxurl, { 'action': 'yadisk_files_publish', 'path': path }, function(data) {
+			$.post(YadiskFiles.url['ajaxurl'], { 'action': 'yadisk_files_publish', 'path': path }, function(data) {
 				
 				Loading.hide();
 				
@@ -101,8 +103,8 @@ var currentDir = '/';
 				
 				if (notifyIsSuccess(json)) {
 					
-					tinyMCEPopup.execCommand('mceInsertContent', false, '[YadiskFiles href="'+json.data.href+'" name="'+name+'" size="'+size+'"]');
-					tinyMCEPopup.close();
+					editor.execCommand('mceInsertContent', false, '[YadiskFiles href="'+json.data.href+'" name="'+name+'" size="'+size+'"]');
+					$(".wp-yadisk-files-filesDialog","body").dialog("close");
 				}
 				
 				return false;
@@ -113,7 +115,7 @@ var currentDir = '/';
 		
 	
 		// функция проверки confirm
-		$(".confirm").click(function(event)
+		$(".confirm",".wp-yadisk-files").click(function(event)
 		{
 			var title = $(this).attr("title");
 			if (!confirm(title))
@@ -125,7 +127,25 @@ var currentDir = '/';
 		});
 		// функция проверки confirm
 		
-		
+		YadiskFiles.filesDialog = function(ed){
+			editor = ed;
+			$.get(YadiskFiles.url['ajaxurl'], { 'action': 'yadisk_files_get_popup_template' }, function(response){
+				
+				var dialogHtml = response;
+				$("body").append('<div class="wp-yadisk-files-filesDialog"></div>');
+				$(".wp-yadisk-files-filesDialog","body")
+					.html(dialogHtml)
+					.dialog({
+						modal: true,
+						title: YadiskFiles.lang['Choose file'],
+						width: 800,
+						height: 450
+					});
+				cd(currentDir);
+			});
+			
+			
+		};
 		
 	}); // ready
 })(jQuery);
