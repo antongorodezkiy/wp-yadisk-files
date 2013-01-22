@@ -5,6 +5,7 @@ class YadiskAPI {
 	protected $yadisk = null;
 	private $login;
 	private $pass;
+	private $initErrors = array();
 	
 	public function __construct($login, $pass) {
 		
@@ -27,26 +28,42 @@ class YadiskAPI {
 	
 	
 	public function init() {
+		
+		global $notify;
+		
+		if (is_null($this->yadisk)) {
 		 
-		$this->yadisk = new Yadisk();
-		$this->yadisk->set_server('ssl://webdav.yandex.ru');
-		$this->yadisk->set_port(443);
-		$this->yadisk->set_user($this->login);
-		$this->yadisk->set_pass($this->pass);
+			$this->yadisk = new Yadisk();
+			$this->yadisk->set_server('ssl://webdav.yandex.ru');
+			$this->yadisk->set_port(443);
+			$this->yadisk->set_user($this->login);
+			$this->yadisk->set_pass($this->pass);
+			
+			// use HTTP/1.1
+			$this->yadisk->set_protocol(1);
+			
+			// enable debugging
+			$this->yadisk->set_debug(false);
+			
+			if (!$this->yadisk->open()) {
+				$this->initErrors[] = __('Error: could not open server connection','wp-yadisk-files');
+			}
+			
+			// check if server supports webdav rfc 2518
+			$this->yadisk->check_webdav();
+			$options = $this->yadisk->options();
+			if ($options['status']['status-code'] == '401') {
+				$this->initErrors[] = __('Error: server does not support webdav or user/password may be wrong','wp-yadisk-files');
+			}
+			
+		}
 		
-		// use HTTP/1.1
-		$this->yadisk->set_protocol(1);
-		
-		// enable debugging
-		$this->yadisk->set_debug(true);
-		
-		if (!$this->yadisk->open())
-			$notify->returnError(__('Error: could not open server connection','wp-yadisk-files'));
-		
-		// check if server supports webdav rfc 2518
-		if (!$this->yadisk->check_webdav())
-			$notify->returnError(__('Error: server does not support webdav or user/password may be wrong','wp-yadisk-files'));
-		
+
+		if (!empty($this->initErrors)) {
+			foreach($this->initErrors as $error) {
+				$notify->error($error);
+			}
+		}
 		
 	}
 	
@@ -57,8 +74,7 @@ class YadiskAPI {
 	{
 		global $notify;
 
-		if (is_null($this->yadisk))
-			$this->init();
+		$this->init();
 
 		$path = urldecode($_POST['path']);
 		
@@ -94,7 +110,7 @@ class YadiskAPI {
 			if ($dir)
 				$notify->returnSuccess(__('Success', 'wp-yadisk-files'));
 			else
-				$notify->returnError(__('Error listing ', 'wp-yadisk-files').$path);
+				$notify->returnError(__('Error listing ', 'wp-yadisk-files').' "'.$path.'"');
 	}
 	
 	
@@ -106,8 +122,7 @@ class YadiskAPI {
 	{
 		global $notify;
 
-		if (is_null($this->yadisk))
-			$this->init();
+		$this->init();
 
 		$path = urldecode($_POST['path']);
 		
@@ -119,7 +134,7 @@ class YadiskAPI {
 			if ($href)
 				$notify->returnSuccess(__('Success', 'wp-yadisk-files'));
 			else
-				$notify->returnError(__('Error publishing ', 'wp-yadisk-files').$path);
+				$notify->returnError(__('Error publishing ', 'wp-yadisk-files').' "'.$path.'"');
 	}
 	
 	
@@ -130,8 +145,7 @@ class YadiskAPI {
 	{
 		global $notify;
 
-		if (is_null($this->yadisk))
-			$this->init();
+		$this->init();
 
 		$path = urldecode($_POST['path']);
 		
@@ -143,11 +157,12 @@ class YadiskAPI {
 			if ($dir)
 				$notify->returnSuccess(__('Success', 'wp-yadisk-files'));
 			else
-				$notify->returnError(__('Error publishing ', 'wp-yadisk-files').$path);
+				$notify->returnError(__('Error publishing ', 'wp-yadisk-files').' "'.$path.'"');
 	}
 	
 	
 	public function getPopupTemplate() {
+		global $notify;
 		include_once(YADISK_FILES_APPPATH.'/views/popup.php');
 		die();
 	}

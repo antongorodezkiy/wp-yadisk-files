@@ -225,6 +225,7 @@ class webdav_client {
 		if (!$resp) {
 			return false;
 		}
+		
 		$this->_error_log($resp['header']['DAV']);
 		// check schema
 		if (preg_match('/1,2/', $resp['header']['DAV'])) {

@@ -1,11 +1,17 @@
-<div class="wp-yadisk-files">
+<div class="wp-yadisk-files popup">
 	<div class="loading hidden"></div>
 	<div class="loading_back hidden"></div>
+	<?=$notify->getMessages()?>
 	
-	<div class="breadcrumbs"></div>
+	<div class="breadcrumbs file drive_network">
+		<div class="file-icon">
+		</div>
+		<div class="in"></div>
+		<div class="clear"></div>
+	</div>
 	
-	<div class="container">
-		<table class="width-100 bordered">
+	<div class="container file-list">
+		<table class="width-100">
 			<thead class="thead-gray">
 				<tr>
 					<th><?=__('Filename', 'wp-yadisk-files')?></th>

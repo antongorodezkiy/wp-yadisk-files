@@ -1,26 +1,29 @@
-.wp-yadisk-files {
+.wp-yadisk-files.popup {
 	position: relative;
 }
 
-.wp-yadisk-files tr:hover td {
+.wp-yadisk-files.popup tr:hover td {
 	background: #eee;
+	box-shadow: 0px 1px 2px #999 inset;
 }
 
-.wp-yadisk-files td {
+.wp-yadisk-files.popup td {
 	padding: 0;
+	border-left: 0;
+	border-right: 0;
 }
 
-.wp-yadisk-files td .in {
+.wp-yadisk-files.popup td .in {
 	display: block;
 	padding: 0.75em 0.5em;
 }
 
-.wp-yadisk-files ul {
+.wp-yadisk-files.popup ul {
 	list-style: none;
 	margin: 0;
 }
 
-.wp-yadisk-files li {
+.wp-yadisk-files.popup li {
 	display: block;
 	float: left;
 	width: 100px;
@@ -30,55 +33,77 @@
 	border: 1px solid transparent;
 }
 
-	.wp-yadisk-files li:hover {
+	.wp-yadisk-files.popup li:hover {
 		background: #efefef;
 		border: 1px solid #aaa;
 		box-shadow: 1px 1px 2px #999;
 	}
 	
-	.wp-yadisk-files li img,
-	.wp-yadisk-files li iframe {
+	.wp-yadisk-files.popup li img,
+	.wp-yadisk-files.popup li iframe {
 		max-width: 64px;
 		max-height: 64px;
 		margin: 0 auto;
 		display: block;
 	}
 	
-	.wp-yadisk-files li a.add {
+	.wp-yadisk-files.popup li a.add {
 		padding: 3px 3px 3px 27px;
 		display: block;
 		text-align: center;
 	}
 	
-	.wp-yadisk-files .clear {
+	.wp-yadisk-files.popup .clear {
 		clear: both;
 	}
 
-.wp-yadisk-files .breadcrumbs {
+.wp-yadisk-files.popup .breadcrumbs {
 	background: none repeat scroll 0 0 #FFFFFF;
     display: block;
     padding: 3px;
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
 	border-bottom: 1px solid #eee;
 	box-shadow: 0px 1px 2px #999;
 	z-index: 10;
+	overflow-x: scroll;
 }
 
-.wp-yadisk-files .container {
-	box-shadow: 0px 0px 1px #aaa;
+	.wp-yadisk-files.popup .breadcrumbs .file-icon,
+	.wp-yadisk-files.popup .breadcrumbs .in {
+		float: left;
+	}
+
+.wp-yadisk-files.popup .file-list {
+	height: 420px;
+	overflow-y: scroll;
 }
 
-.wp-yadisk-files .loading {
+	.wp-yadisk-files.popup .file-list table {
+		margin-top: 35px;
+	}
+	
+.wp-yadisk-files.popup .loading {
 	background: url('../img/loading.gif') no-repeat center center;
 	display: block;
 	width: 780px;
-	height: 100%;
-	position: fixed;
+	height: 430px;
+	position: absolute;
+	z-index: 10;
 }
 
-.wp-yadisk-files .loading_back {
+.wp-yadisk-files.popup .notify {
+	display: block;
+	width: 780px;
+	height: 230px;
+	position: absolute;
+	text-align: center;
+	margin-top: 200px;
+	z-index: 10;
+}
+
+.wp-yadisk-files.popup .loading_back {
 	opacity: .75; /* Standard: FF gt 1.5, Opera, Safari */
 	filter: alpha(opacity=75); /* IE lt 8 */
 	-ms-filter: "alpha(opacity=75)"; /* IE 8 */
@@ -86,22 +111,23 @@
 	-moz-opacity: .75; /* FF lt 1.5, Netscape */
 	background: #fff;
 	width: 780px;
-	height: 100%;
-	position: fixed;
+	height: 430px;
+	position: absolute;
+	z-index: 10;
 }
 
-.wp-yadisk-files .hidden {
+.wp-yadisk-files.popup .hidden {
 	display: none;
 }
 
 
-.wp-yadisk-files .dir,
-.wp-yadisk-files .file {
+.wp-yadisk-files.popup .dir,
+.wp-yadisk-files.popup .file {
 	display: block;
 }
 
 
-.wp-yadisk-files .file .file-icon {
+.wp-yadisk-files.popup .file .file-icon {
 	background: url('../img/sprite-files-icons.png') no-repeat top left;
 	display: inline-block;
     height: 16px;
@@ -111,129 +137,129 @@
     top: 3px;
 }
 
-.wp-yadisk-files .file.add .file-icon { background-position: 0 0; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.arrow_turn_left .file-icon { background-position: 0 -66px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.arrow_up .file-icon { background-position: 0 -132px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.bullet_go .file-icon { background-position: 0 -198px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.drive_network .file-icon { background-position: 0 -264px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.3gp .file-icon { background-position: 0 -330px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.7z .file-icon { background-position: 0 -396px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.ace .file-icon { background-position: 0 -462px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.ai .file-icon { background-position: 0 -528px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.aif .file-icon { background-position: 0 -594px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.aiff .file-icon { background-position: 0 -660px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.amr .file-icon { background-position: 0 -726px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.asf .file-icon { background-position: 0 -792px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.asx .file-icon { background-position: 0 -858px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.bat .file-icon { background-position: 0 -924px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.bin .file-icon { background-position: 0 -990px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.bmp .file-icon { background-position: 0 -1056px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.bup .file-icon { background-position: 0 -1122px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.cab .file-icon { background-position: 0 -1188px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.cbr .file-icon { background-position: 0 -1254px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.cda .file-icon { background-position: 0 -1320px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.cdl .file-icon { background-position: 0 -1386px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.cdr .file-icon { background-position: 0 -1452px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.chm .file-icon { background-position: 0 -1518px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.css .file-icon { background-position: 0 -1584px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.dat .file-icon { background-position: 0 -1650px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.divx .file-icon { background-position: 0 -1716px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.dll .file-icon { background-position: 0 -1782px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.dmg .file-icon { background-position: 0 -1848px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.doc .file-icon { background-position: 0 -1914px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.dss .file-icon { background-position: -66px 0; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.dvf .file-icon { background-position: -66px -66px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.dwg .file-icon { background-position: -66px -132px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.eml .file-icon { background-position: -66px -198px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.eps .file-icon { background-position: -66px -264px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.exe .file-icon, .wp-yadisk-files .file.apk .file-icon { background-position: -66px -330px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.fla .file-icon { background-position: -66px -396px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.flv .file-icon { background-position: -66px -462px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.gif .file-icon { background-position: -66px -528px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.gz .file-icon { background-position: -66px -594px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.hqx .file-icon { background-position: -66px -660px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.htm .file-icon { background-position: -66px -726px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.html .file-icon { background-position: -66px -792px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.ifo .file-icon { background-position: -66px -858px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.indd .file-icon { background-position: -66px -924px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.iso .file-icon { background-position: -66px -990px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.jar .file-icon { background-position: -66px -1056px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.javascript .file-icon { background-position: -66px -1122px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.jpeg .file-icon { background-position: -66px -1188px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.jpg .file-icon { background-position: -66px -1254px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.lnk .file-icon { background-position: -66px -1320px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.log .file-icon { background-position: -66px -1386px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.m4a .file-icon { background-position: -66px -1452px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.m4b .file-icon { background-position: -66px -1518px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.m4p .file-icon { background-position: -66px -1584px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.m4v .file-icon { background-position: -66px -1650px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.mcd .file-icon { background-position: -66px -1716px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.mdb .file-icon { background-position: -66px -1782px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.mid .file-icon { background-position: -66px -1848px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.mov .file-icon { background-position: -66px -1914px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.mp2 .file-icon { background-position: -132px 0; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.mp4 .file-icon { background-position: -132px -66px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.mpeg .file-icon { background-position: -132px -132px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.mpg .file-icon { background-position: -132px -198px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.msi .file-icon { background-position: -132px -264px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.mswmm .file-icon { background-position: -132px -330px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.ogg .file-icon, .wp-yadisk-files .file.mp3 .file-icon { background-position: -132px -396px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.pdf .file-icon, .wp-yadisk-files .file.djvu .file-icon { background-position: -132px -462px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.php .file-icon { background-position: -132px -528px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.png .file-icon { background-position: -132px -594px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.pps .file-icon { background-position: -132px -660px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.ps .file-icon { background-position: -132px -726px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.psd .file-icon { background-position: -132px -792px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.pst .file-icon { background-position: -132px -858px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.ptb .file-icon { background-position: -132px -924px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.pub .file-icon { background-position: -132px -990px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.qbb .file-icon { background-position: -132px -1056px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.qbw .file-icon { background-position: -132px -1122px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.qxd .file-icon { background-position: -132px -1188px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.ram .file-icon { background-position: -132px -1254px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.rar .file-icon { background-position: -132px -1320px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.rm .file-icon { background-position: -132px -1386px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.rmvb .file-icon { background-position: -132px -1452px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.rtf .file-icon { background-position: -132px -1518px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.ruby .file-icon { background-position: -132px -1584px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.sea .file-icon { background-position: -132px -1650px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.ses .file-icon { background-position: -132px -1716px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.sh .file-icon { background-position: -132px -1782px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.sit .file-icon { background-position: -132px -1848px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.sitx .file-icon { background-position: -132px -1914px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.sql .file-icon { background-position: -198px 0; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.ss .file-icon { background-position: -198px -66px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.swf .file-icon { background-position: -198px -132px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.tgz .file-icon { background-position: -198px -198px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.thm .file-icon { background-position: -198px -264px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.tif .file-icon { background-position: -198px -330px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.tmp .file-icon { background-position: -198px -396px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.torrent .file-icon { background-position: -198px -462px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.ttf .file-icon { background-position: -198px -528px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.txt .file-icon { background-position: -198px -594px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.vcd .file-icon { background-position: -198px -660px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.vob .file-icon { background-position: -198px -726px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.wav .file-icon { background-position: -198px -792px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.wma .file-icon { background-position: -198px -858px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.wmv .file-icon { background-position: -198px -924px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.wps .file-icon { background-position: -198px -990px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.xls .file-icon { background-position: -198px -1056px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.xpi .file-icon { background-position: -198px -1122px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.zip .file-icon { background-position: -198px -1188px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.folder .file-icon { background-position: -198px -1254px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.folder_add .file-icon { background-position: -198px -1320px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.folder_edit .file-icon { background-position: -198px -1386px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.folder_go .file-icon { background-position: -198px -1452px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.folder_link .file-icon { background-position: -198px -1518px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.link_add .file-icon { background-position: -198px -1584px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.textfield_rename .file-icon { background-position: -198px -1650px; width: 16px; height: 16px; } 
-.wp-yadisk-files .file.tick .file-icon { background-position: -198px -1716px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.add .file-icon { background-position: 0 0; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.arrow_turn_left .file-icon { background-position: 0 -66px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.arrow_up .file-icon { background-position: 0 -132px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.bullet_go .file-icon { background-position: 0 -198px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.drive_network .file-icon { background-position: 0 -264px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.3gp .file-icon { background-position: 0 -330px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.7z .file-icon { background-position: 0 -396px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.ace .file-icon { background-position: 0 -462px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.ai .file-icon { background-position: 0 -528px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.aif .file-icon { background-position: 0 -594px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.aiff .file-icon { background-position: 0 -660px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.amr .file-icon { background-position: 0 -726px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.asf .file-icon { background-position: 0 -792px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.asx .file-icon { background-position: 0 -858px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.bat .file-icon { background-position: 0 -924px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.bin .file-icon { background-position: 0 -990px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.bmp .file-icon { background-position: 0 -1056px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.bup .file-icon { background-position: 0 -1122px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.cab .file-icon { background-position: 0 -1188px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.cbr .file-icon { background-position: 0 -1254px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.cda .file-icon { background-position: 0 -1320px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.cdl .file-icon { background-position: 0 -1386px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.cdr .file-icon { background-position: 0 -1452px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.chm .file-icon { background-position: 0 -1518px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.css .file-icon { background-position: 0 -1584px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.dat .file-icon { background-position: 0 -1650px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.divx .file-icon { background-position: 0 -1716px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.dll .file-icon { background-position: 0 -1782px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.dmg .file-icon { background-position: 0 -1848px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.doc .file-icon { background-position: 0 -1914px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.dss .file-icon { background-position: -66px 0; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.dvf .file-icon { background-position: -66px -66px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.dwg .file-icon { background-position: -66px -132px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.eml .file-icon { background-position: -66px -198px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.eps .file-icon { background-position: -66px -264px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.exe .file-icon, .wp-yadisk-files.popup .file.apk .file-icon { background-position: -66px -330px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.fla .file-icon { background-position: -66px -396px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.flv .file-icon { background-position: -66px -462px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.gif .file-icon { background-position: -66px -528px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.gz .file-icon { background-position: -66px -594px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.hqx .file-icon { background-position: -66px -660px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.htm .file-icon { background-position: -66px -726px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.html .file-icon { background-position: -66px -792px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.ifo .file-icon { background-position: -66px -858px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.indd .file-icon { background-position: -66px -924px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.iso .file-icon { background-position: -66px -990px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.jar .file-icon { background-position: -66px -1056px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.javascript .file-icon { background-position: -66px -1122px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.jpeg .file-icon { background-position: -66px -1188px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.jpg .file-icon { background-position: -66px -1254px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.lnk .file-icon { background-position: -66px -1320px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.log .file-icon { background-position: -66px -1386px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.m4a .file-icon { background-position: -66px -1452px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.m4b .file-icon { background-position: -66px -1518px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.m4p .file-icon { background-position: -66px -1584px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.m4v .file-icon { background-position: -66px -1650px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.mcd .file-icon { background-position: -66px -1716px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.mdb .file-icon { background-position: -66px -1782px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.mid .file-icon { background-position: -66px -1848px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.mov .file-icon { background-position: -66px -1914px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.mp2 .file-icon { background-position: -132px 0; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.mp4 .file-icon { background-position: -132px -66px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.mpeg .file-icon { background-position: -132px -132px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.mpg .file-icon { background-position: -132px -198px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.msi .file-icon { background-position: -132px -264px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.mswmm .file-icon { background-position: -132px -330px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.ogg .file-icon, .wp-yadisk-files.popup .file.mp3 .file-icon { background-position: -132px -396px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.pdf .file-icon, .wp-yadisk-files.popup .file.djvu .file-icon { background-position: -132px -462px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.php .file-icon { background-position: -132px -528px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.png .file-icon { background-position: -132px -594px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.pps .file-icon { background-position: -132px -660px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.ps .file-icon { background-position: -132px -726px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.psd .file-icon { background-position: -132px -792px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.pst .file-icon { background-position: -132px -858px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.ptb .file-icon { background-position: -132px -924px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.pub .file-icon { background-position: -132px -990px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.qbb .file-icon { background-position: -132px -1056px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.qbw .file-icon { background-position: -132px -1122px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.qxd .file-icon { background-position: -132px -1188px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.ram .file-icon { background-position: -132px -1254px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.rar .file-icon { background-position: -132px -1320px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.rm .file-icon { background-position: -132px -1386px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.rmvb .file-icon { background-position: -132px -1452px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.rtf .file-icon { background-position: -132px -1518px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.ruby .file-icon { background-position: -132px -1584px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.sea .file-icon { background-position: -132px -1650px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.ses .file-icon { background-position: -132px -1716px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.sh .file-icon { background-position: -132px -1782px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.sit .file-icon { background-position: -132px -1848px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.sitx .file-icon { background-position: -132px -1914px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.sql .file-icon { background-position: -198px 0; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.ss .file-icon { background-position: -198px -66px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.swf .file-icon { background-position: -198px -132px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.tgz .file-icon { background-position: -198px -198px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.thm .file-icon { background-position: -198px -264px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.tif .file-icon { background-position: -198px -330px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.tmp .file-icon { background-position: -198px -396px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.torrent .file-icon { background-position: -198px -462px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.ttf .file-icon { background-position: -198px -528px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.txt .file-icon { background-position: -198px -594px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.vcd .file-icon { background-position: -198px -660px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.vob .file-icon { background-position: -198px -726px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.wav .file-icon { background-position: -198px -792px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.wma .file-icon { background-position: -198px -858px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.wmv .file-icon { background-position: -198px -924px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.wps .file-icon { background-position: -198px -990px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.xls .file-icon { background-position: -198px -1056px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.xpi .file-icon { background-position: -198px -1122px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.zip .file-icon { background-position: -198px -1188px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.folder .file-icon { background-position: -198px -1254px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.folder_add .file-icon { background-position: -198px -1320px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.folder_edit .file-icon { background-position: -198px -1386px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.folder_go .file-icon { background-position: -198px -1452px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.folder_link .file-icon { background-position: -198px -1518px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.link_add .file-icon { background-position: -198px -1584px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.textfield_rename .file-icon { background-position: -198px -1650px; width: 16px; height: 16px; } 
+.wp-yadisk-files.popup .file.tick .file-icon { background-position: -198px -1716px; width: 16px; height: 16px; } 
 
 
-.wp-yadisk-files .file:hover .file-icon {
+.wp-yadisk-files.popup .file-list .file:hover .file-icon {
 	background-position: -198px -1584px; width: 16px; height: 16px;
 }
 
-.wp-yadisk-files .dir:hover .file-icon {
+.wp-yadisk-files.popup .file-list .dir:hover .file-icon {
 	background-position: -198px -1452px; width: 16px; height: 16px;
 }
