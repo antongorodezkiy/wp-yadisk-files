@@ -104,7 +104,7 @@
 				<div class="row in container">
 					<div class="row container">
 						<form class="half" accept-charset="UTF-8" action="https://advisor.wmtransfer.com/Spasibo.aspx" method="post" target="_blank" title="<?=__('Say "Thanks" to Author','wp-yadisk-files')?>">
-							<input type="hidden" name="url" value="<?=$_SERVER['SERVER_NAME']?>"/>
+							<input type="hidden" name="url" value="eduard.kozachek.net"/>
 							<button class="nobutton" type="submit"><img src="http://advisor.wmtransfer.com/img/Spasibo!.png" alt="<?=__('Thank you','wp-yadisk-files')?>"/></button>
 						</form>
 						<div class="half">
