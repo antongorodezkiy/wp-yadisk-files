@@ -20,7 +20,7 @@ This plugin is created for easy adding files from <a target="_blank" href="http:
 
 1. Upload `wp-yadisk-files` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Set login and password settings on Yadisk Files settings page
+1. Set Yandex login and password settings on Yadisk Files settings page
 
 =To use the plugin=
 
@@ -47,7 +47,16 @@ This plugin is created for easy adding files from <a target="_blank" href="http:
 = 1.0 =
 * Ability to add files from Yandex.Disk in wordpress posts/pages editor
 
+= 1.0.1 =
+* Fixed css error in popup
+* Fixed read catalog error
+
 == Upgrade Notice ==
 
 = 1.0 =
 First version of plugin
+
+= 1.0.1 =
+Fixed css error in popup
+Fixed read catalog error
+
