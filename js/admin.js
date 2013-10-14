@@ -28,7 +28,6 @@ YadiskFiles.editor = null;
 				var html = '';
 				
 				if (notifyIsSuccess(json)) {
-					
 					if (path != '/') {
 						html += '<tr><td><a href="#" class="jq-dir in dir file arrow_up" data-href="/"><span class="file-icon"></span>/</a></td><td>&nbsp;</td></tr>';
 						
@@ -60,7 +59,7 @@ YadiskFiles.editor = null;
 					$(".content",".wp-yadisk-files-filesDialog").html(html);
 				}
 				else {
-					Loading.show();
+					Loading.hide();
 					notify(json);
 				}
 				

@@ -1,7 +1,7 @@
+<?=$notify->getMessages()?>
 <div class="wp-yadisk-files popup">
 	<div class="loading hidden"></div>
 	<div class="loading_back hidden"></div>
-	<?=$notify->getMessages()?>
 	
 	<div class="breadcrumbs file drive_network">
 		<div class="file-icon">

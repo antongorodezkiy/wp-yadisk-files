@@ -50,7 +50,7 @@ class webdav_client {
 	var $_user;
 	var $_protocol = 'HTTP/1.0';
 	var $_pass;
-	var $_socket_timeout = 5;
+	var $_socket_timeout = 10;
 	var $_errno;
 	var $_errstr;
 	var $_user_agent = 'php class webdav_client $Revision: 1.7 $';
@@ -1327,8 +1327,8 @@ class webdav_client {
 		$buffer = '';
 		$header = '';
 		// attention: do not make max_chunk_size to big....
-		//$max_chunk_size = 8192;
-		$max_chunk_size = 16364;
+		$max_chunk_size = 8192;
+		//$max_chunk_size = 16364;
 		// be sure we got a open ressource
 		if (! $this->_fp) {
 			$this->_error_log('socket is not open. Can not process response');
@@ -1384,16 +1384,18 @@ class webdav_client {
 
 			// check for a specified content-length
 			case preg_match('/Content\\-Length:\\s+([0-9]*)\\r\\n/',$header,$matches):
-				$this->_error_log('Getting data using Content-Length '. $matches[1]);
+				$content_length = $matches[1];
+				$this->_error_log('Getting data using Content-Length '. $content_length);
 				// check if we the content data size is small enough to get it as one block
-				if ($matches[1] <= $max_chunk_size ) {
+				/*if ($matches[1] <= $max_chunk_size ) {
 					// only read something if Content-Length is bigger than 0
 					if ($matches[1] > 0 ) {
 						$buffer = fread($this->_fp, $matches[1]);
 					} else {
 						$buffer = '';
 					}
-				} else {
+					echo('<pre>'.__FILE__.':'.__LINE__.'</pre><hr /><pre>'.print_r($buffer,true).'</pre>');
+				} else {*/
 					// data is to big to handle it as one. Get it chunk per chunk...
 					/*do {
 						$mod = $max_chunk_size % ($matches[1] - strlen($buffer));
@@ -1401,11 +1403,16 @@ class webdav_client {
 						$buffer .= fread($this->_fp, $chunk_size);
 						$this->_error_log('mod: ' . $mod . ' chunk: ' . $chunk_size . ' total: ' . strlen($buffer));
 					} while ($mod == $max_chunk_size);*/
-					fwrite($this->_fp, "Action: Status\r\n\r\n");
+					
+					while($content_length != strlen($buffer)) {
+						$char = fread($this->_fp, 1);
+						$buffer .= $char;	
+					}
+					fwrite($this->_fp, "Action: Status\r\n");
 					fwrite($this->_fp, "Connection: Close\r\n\r\n");
-					while(!feof($this->_fp))
-						$buffer .= fread($this->_fp, $max_chunk_size);
-				}
+					//echo('<pre>'.__FILE__.':'.__LINE__.'</pre><hr /><pre>'.print_r($buffer,true).'</pre>');
+				//}
+				
 				break;
 
 			// check for 204 No Content

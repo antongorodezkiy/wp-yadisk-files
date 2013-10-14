@@ -6,13 +6,14 @@ class YadiskAPI {
 	private $login;
 	private $pass;
 	private $initErrors = array();
+	protected $base_uri = 'ssl://webdav.yandex.ru';
 	
 	public function __construct($login, $pass) {
 		
 		if (!class_exists('webdav_client')) {
 			require(YADISK_FILES_APPPATH.'/libraries/class_webdav_client.php');
 		}
-		
+
 		if (!class_exists('yadisk')) {
 			require(YADISK_FILES_APPPATH.'/libraries/yadisk.class.php');
 		}
@@ -34,7 +35,7 @@ class YadiskAPI {
 		if (is_null($this->yadisk)) {
 		 
 			$this->yadisk = new Yadisk();
-			$this->yadisk->set_server('ssl://webdav.yandex.ru');
+			$this->yadisk->set_server($this->base_uri);
 			$this->yadisk->set_port(443);
 			$this->yadisk->set_user($this->login);
 			$this->yadisk->set_pass($this->pass);
@@ -77,7 +78,7 @@ class YadiskAPI {
 		$this->init();
 
 		$path = urldecode($_POST['path']);
-		
+
 		$dir = $this->yadisk->ls($path);
 
 		$folders = array();

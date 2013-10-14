@@ -31,12 +31,6 @@ add_action('init', 'yadisk_files_front_register_head');
 	
 if (is_admin())
 {
-	
-/*
-	error_reporting(E_ALL);
-	ini_set('display_errors',1);
-*/
-
 
 // Create Text Domain For Translations
 	function yadiskFilesLocalization() {
