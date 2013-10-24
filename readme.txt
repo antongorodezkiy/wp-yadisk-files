@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: antongorodezkiy
-Donate link: http://eduard.kozachek.net/projects/wordpress-projects/wp-yadisk-files-plugin/
+Donate link: http://eduard.kozachek.net/projects/wp-yadisk-files-plugin/
 Tags: files, uploader, yandex, yandex disk, webdav, cloud storage
 Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 1.0.1
+Tested up to: 3.6.1
+Stable tag: 1.1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,12 +51,9 @@ This plugin is created for easy adding files from <a target="_blank" href="http:
 * Fixed css error in popup
 * Fixed read catalog error
 
+= 1.1.0 =
+* Added upload to yandex disk feature right from the dialog
+* Fixed css error in popup in Wordpress 3.6.1
+* Added donation Paypal method
+
 == Upgrade Notice ==
-
-= 1.0 =
-First version of plugin
-
-= 1.0.1 =
-Fixed css error in popup
-Fixed read catalog error
-

@@ -2,70 +2,97 @@ var YadiskFiles = YadiskFiles || {};
 YadiskFiles.currentDir = '/';
 YadiskFiles.editor = null;
 
+// get current dir
+	YadiskFiles.getCurrentDir = function() {
+		return YadiskFiles.currentDir;
+	};
+
+// set current dir
+	YadiskFiles.setCurrentDir = function($, path) {
+		YadiskFiles.currentDir = path;
+		$('.yadisk_fileupload', ".wp-yadisk-files").fileupload(
+			'option',
+			'formData',
+			{
+				'action': 'yadisk_files_upload',
+				'path': YadiskFiles.getCurrentDir()
+			}
+		);
+	};
+
+// cd
+	YadiskFiles.cd = function($, path, loaded) {
+	
+		Loading.show();
+		
+	
+		var pathParts = [];
+		var newPathParts = [];
+		if (typeof(path) == 'undefined') {
+			path = '/';
+		}
+		else {
+			pathParts = path.split("/");
+		}
+		
+		$.post(YadiskFiles.url['ajaxurl'], { 'action': 'yadisk_files_get_list', 'path': path }, function(data) {
+			
+			Loading.hide();
+			
+			var json = $.parseJSON(data);
+			var html = '';
+			
+			if (notifyIsSuccess(json)) {
+				
+				YadiskFiles.setCurrentDir($, path);
+				
+				if (path != '/') {
+					html += '<tr><td><a href="#" class="jq-dir in dir file arrow_up" data-href="/"><span class="file-icon"></span>/</a></td><td>&nbsp;</td></tr>';
+					
+					for(i in pathParts)
+						if (pathParts[i] != '')
+							newPathParts.push(pathParts[i]);
+						
+					delete newPathParts[newPathParts.length-1];
+					
+					var newPath = newPathParts.join('/');
+					html += '<tr><td><a href="#" class="jq-dir in dir file arrow_turn_left" data-href="/'+newPath+'"><span class="file-icon"></span>..</a></td><td>&nbsp;</td></tr>';
+				}
+				
+				// breadcrumbs
+					$(".breadcrumbs .in",".wp-yadisk-files-filesDialog").html(decodeURIComponent(path));
+				
+				var folders = json.data.folders;
+				$.each(folders,function(index, value){
+					html += '<tr><td><a href="#" class="jq-dir in dir file folder" data-href="'+value.href+'"><span class="file-icon"></span>'+value.name+'</a></td><td>&nbsp;</td></tr>';
+				});
+				
+				
+				var files = json.data.files;
+				$.each(files,function(index, value){
+					html += '<tr><td><a href="#" class="jq-file in file '+value.ext+'" data-href="'+value.href+'" data-size="'+value.size+'"><span class="file-icon"></span>'+value.name+'</a></td><td><span class="in">'+value.size+'</span></td></tr>';
+				});
+				
+				
+				$(".content",".wp-yadisk-files-filesDialog").html(html);
+				
+				if (typeof(loaded) != 'undefined') {
+					loaded();
+				}
+			}
+			else {
+				Loading.hide();
+				notify(json);
+			}
+			
+			return false;
+		});
+	};
+
 (function($) {
 	
 	$(document).ready(function()
 	{
-		
-		function cd(path) {
-	
-			Loading.show();
-			
-		
-			var pathParts = [];
-			var newPathParts = [];
-			if (typeof(path) == 'undefined') {
-				path = '/';
-			}
-			else
-				pathParts = path.split("/");
-			
-			$.post(YadiskFiles.url['ajaxurl'], { 'action': 'yadisk_files_get_list', 'path': path }, function(data) {
-				
-				Loading.hide();
-				
-				var json = $.parseJSON(data);
-				var html = '';
-				
-				if (notifyIsSuccess(json)) {
-					if (path != '/') {
-						html += '<tr><td><a href="#" class="jq-dir in dir file arrow_up" data-href="/"><span class="file-icon"></span>/</a></td><td>&nbsp;</td></tr>';
-						
-						for(i in pathParts)
-							if (pathParts[i] != '')
-								newPathParts.push(pathParts[i]);
-							
-						delete newPathParts[newPathParts.length-1];
-						
-						var newPath = newPathParts.join('/');
-						html += '<tr><td><a href="#" class="jq-dir in dir file arrow_turn_left" data-href="/'+newPath+'"><span class="file-icon"></span>..</a></td><td>&nbsp;</td></tr>';
-					}
-					
-					// breadcrumbs
-						$(".breadcrumbs .in",".wp-yadisk-files-filesDialog").html(decodeURIComponent(path));
-					
-					var folders = json.data.folders;
-					$.each(folders,function(index, value){
-						html += '<tr><td><a href="#" class="jq-dir in dir file folder" data-href="'+value.href+'"><span class="file-icon"></span>'+value.name+'</a></td><td>&nbsp;</td></tr>';
-					});
-					
-					
-					var files = json.data.files;
-					$.each(files,function(index, value){
-						html += '<tr><td><a href="#" class="jq-file in file '+value.ext+'" data-href="'+value.href+'" data-size="'+value.size+'"><span class="file-icon"></span>'+value.name+'</a></td><td><span class="in">'+value.size+'</span></td></tr>';
-					});
-					
-					
-					$(".content",".wp-yadisk-files-filesDialog").html(html);
-				}
-				else {
-					Loading.hide();
-					notify(json);
-				}
-				
-				return false;
-			});
-		}
 		
 		Loading = {
 			show: function() {
@@ -78,17 +105,17 @@ YadiskFiles.editor = null;
 			}
 		};
 		
-		
+		// переход в директорию
 		$(".jq-dir",".wp-yadisk-files").live("click",function(event)
 		{
 			var targetDir = $(this).attr('data-href');
 			
-			cd(targetDir);
+			YadiskFiles.cd($, targetDir);
 			
 			return false;
 		});
 		
-		
+		// добавление файла в пост
 		$(".jq-file",".wp-yadisk-files").live("click",function(event)
 		{
 			Loading.show();
@@ -108,7 +135,6 @@ YadiskFiles.editor = null;
 					$(".wp-yadisk-files-filesDialog","body").dialog("close");
 				}
 				else {
-					Loading.show();
 					notify(json);
 				}
 				
@@ -139,21 +165,46 @@ YadiskFiles.editor = null;
 				
 				var dialogHtml = response;
 				if ($(".wp-yadisk-files-filesDialog").size()) {
+					YadiskFiles.cd($, YadiskFiles.currentDir);
 					$(".wp-yadisk-files-filesDialog","body").dialog("open");
 				}
 				else {
-					cd(YadiskFiles.currentDir);
+					
 					$("body").append('<div class="wp-yadisk-files-filesDialog"></div>');
 					$(".wp-yadisk-files-filesDialog","body")
 						.html(dialogHtml)
 						.dialog({
-							modal: true,
+							modal: false,
 							title: YadiskFiles.lang['Choose file'],
 							width: 800,
 							height: 470,
 							resizable: false,
 							closeOnEscape: true
 						});
+					
+					YadiskFiles.cd($, YadiskFiles.currentDir);
+
+					$('.yadisk_fileupload',".wp-yadisk-files").fileupload({
+						url: YadiskFiles.url['ajaxurl'],
+						formData: {
+							'action': 'yadisk_files_upload',
+							'path': YadiskFiles.getCurrentDir()
+						},
+						dataType: 'json',
+						submit: function (e, data) {
+							Loading.show();
+						},
+						done: function (e, data) {
+							var json = data.result;
+							Loading.hide();
+							if (notifyIsSuccess(json)) {
+								YadiskFiles.cd($, YadiskFiles.currentDir);
+							}
+							else {
+								notify(json);
+							}
+						}
+					});
 				}
 			});
 			
@@ -164,7 +215,6 @@ YadiskFiles.editor = null;
 		$(".ui-widget-overlay").live("click", function() {
 			$(".wp-yadisk-files-filesDialog","body").dialog("close");
 		});
-		
 		
 	}); // ready
 })(jQuery);

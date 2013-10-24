@@ -102,14 +102,27 @@
 					</h3>
 				</div>
 				<div class="row in container">
+					<div class="third">Yandex.Money</div>
 					<div class="row container">
-						<form class="half" accept-charset="UTF-8" action="https://advisor.wmtransfer.com/Spasibo.aspx" method="post" target="_blank" title="<?=__('Say "Thanks" to Author','wp-yadisk-files')?>">
+						<form class="twothird" accept-charset="UTF-8" action="https://advisor.wmtransfer.com/Spasibo.aspx" method="post" target="_blank" title="<?=__('Say "Thanks" to Author','wp-yadisk-files')?>">
 							<input type="hidden" name="url" value="<?=$_SERVER['SERVER_NAME']?>"/>
 							<button class="nobutton" type="submit"><img src="http://advisor.wmtransfer.com/img/Spasibo!.png" alt="<?=__('Thank you','wp-yadisk-files')?>"/></button>
 						</form>
-						<div class="half">
+					</div>
+					<div class="row container">
+						<div class="third">WebMoney</div>
+						<div class="twothird">
 							<iframe allowtransparency="true" src="https://money.yandex.ru/embed/small.xml?uid=41001290763964&amp;button-text=06&amp;button-size=s&amp;button-color=white&amp;targets=%d0%9f%d0%be%d0%b6%d0%b5%d1%80%d1%82%d0%b2%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5+%d0%b7%d0%b0+wp-yadisk-files&amp;default-sum=40&amp;mail=on" frameborder="0" height="31" scrolling="no" width="auto"></iframe>
 						</div>
+					</div>
+					<div class="row container">
+						<div class="third">PayPal</div>
+						<form class="twothird" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="B5BNM66C4GMB6">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
 					</div>
 				</div>
 			</div>

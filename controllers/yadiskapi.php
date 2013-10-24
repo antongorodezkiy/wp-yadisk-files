@@ -69,10 +69,9 @@ class YadiskAPI {
 	}
 	
 	/*
-	 * 
+	 * Get directory listing
 	 */
-	function getList()
-	{
+	public function getList() {
 		global $notify;
 
 		$this->init();
@@ -117,10 +116,9 @@ class YadiskAPI {
 	
 	
 	/*
-	 * 
+	 * Publish
 	 */
-	function publish()
-	{
+	public function publish() {
 		global $notify;
 
 		$this->init();
@@ -140,15 +138,14 @@ class YadiskAPI {
 	
 	
 	/*
-	 * 
+	 * Unpublish
 	 */
-	function unpublish()
-	{
+	public function unpublish() {
 		global $notify;
 
 		$this->init();
 
-		$path = urldecode($_POST['path']);
+		$path = strip_tags(urldecode($_POST['path']));
 		
 		$href = $this->yadisk->post($path.'?unpublish');
 
@@ -159,6 +156,52 @@ class YadiskAPI {
 				$notify->returnSuccess(__('Success', 'wp-yadisk-files'));
 			else
 				$notify->returnError(__('Error publishing ', 'wp-yadisk-files').' "'.$path.'"');
+	}
+	
+	
+	/*
+	 * Upload
+	 */
+	public function upload() {
+		global $notify;
+		
+		$error_messages = array(
+			1 => __('The uploaded file exceeds the upload_max_filesize directive in php.ini', 'wp-yadisk-files'),
+			2 => __('The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form', 'wp-yadisk-files'),
+			3 => __('The uploaded file was only partially uploaded', 'wp-yadisk-files'),
+			4 => __('No file was uploaded', 'wp-yadisk-files'),
+			6 => __('Missing a temporary folder', 'wp-yadisk-files'),
+			7 => __('Failed to write file to disk', 'wp-yadisk-files'),
+			8 => __('A PHP extension stopped the file upload', 'wp-yadisk-files')
+		);
+
+		$this->init();
+
+		$target_dir_path = strip_tags(urldecode($_POST['path']));
+		
+		if ($_FILES['yadisk_file']['error']) {
+			$notify->returnError(__('Error uploading validation', 'wp-yadisk-files').': '.$error_messages[$_FILES['yadisk_file']['error']]);
+		}
+		
+		if (!$_FILES['yadisk_file']['size']) {
+			$notify->returnError(__('Error uploading validation', 'wp-yadisk-files').': '. __('File is empty', 'wp-yadisk-files'));
+		}
+		
+		$filename = strip_tags($_FILES['yadisk_file']['name']);
+		$path = $target_dir_path.'/'.$filename;
+	
+		$uploaded = $this->yadisk->put_file($path, $_FILES['yadisk_file']['tmp_name']);
+		
+		if ($uploaded) {
+
+			$notify->setData(array('path' => $path));
+			
+			$notify->returnSuccess(__('Success', 'wp-yadisk-files'));
+		}
+		else {
+			$notify->returnError(__('Error uploading ', 'wp-yadisk-files').' "'.$path.'"');
+		}
+		
 	}
 	
 	

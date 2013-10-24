@@ -11,10 +11,16 @@
 	</div>
 	
 	<div class="container file-list">
-		<table class="width-100">
+		<table class="width-100 striped">
 			<thead class="thead-gray">
 				<tr>
-					<th><?=__('Filename', 'wp-yadisk-files')?></th>
+					<th>
+						<?=__('Filename', 'wp-yadisk-files')?>
+						<span class="button fileinput-button">
+							<span><?=__('Upload', 'wp-yadisk-files')?></span>
+							<input class="yadisk_fileupload" type="file" name="yadisk_file" />
+						</span>
+					</th>
 					<th><?=__('Size', 'wp-yadisk-files')?></th>
 				</tr>
 			</thead>

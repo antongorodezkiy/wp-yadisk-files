@@ -2,10 +2,12 @@
 
 	function yadisk_files_admin_register_head() {
 		wp_enqueue_style('kube.wp-yadisk-files', plugins_url('css/kube.wp-yadisk-files.css', __FILE__ ));
+		wp_enqueue_style('jquery.fileupload-ui.css.wp-yadisk-files', plugins_url('css/jquery.fileupload-ui.css', __FILE__ ));
+		wp_enqueue_style('jquery.fileupload.css.wp-yadisk-files', plugins_url('css/jquery.fileupload.css', __FILE__ ));
 		wp_enqueue_style('admin.wp-yadisk-files', plugins_url('css/admin.css', __FILE__ ), array('kube.wp-yadisk-files'));
 		wp_enqueue_style('popup.wp-yadisk-files', plugins_url('css/popup.css', __FILE__ ));
-		wp_register_style('jq-ui','http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css');
-		wp_enqueue_style('jq-ui');
+		wp_register_style('jq-ui.wp-yadisk-files', plugins_url('css/jquery-ui.css', __FILE__ ));
+		wp_enqueue_style('jq-ui.wp-yadisk-files');
 	}
 	
 	function yadisk_files_js_settings() {
@@ -26,7 +28,17 @@
 		wp_enqueue_script('jquery-ui-core');
 		wp_enqueue_script('jquery-ui-dialog');
 		wp_enqueue_script('jquery-ui-tabs');
+		
 		wp_enqueue_script( 'notify.wp-yadisk-files', plugins_url('js/notify.js', __FILE__ ),array(
+			'jquery'
+		));
+		wp_enqueue_script( 'jquery.ui.widget.wp-yadisk-files', plugins_url('js/jquery.ui.widget.js', __FILE__ ),array(
+			'jquery'
+		));
+		wp_enqueue_script( 'jquery.iframe-transport.js.wp-yadisk-files', plugins_url('js/jquery.iframe-transport.js', __FILE__ ),array(
+			'jquery'
+		));
+		wp_enqueue_script( 'jquery.fileupload.js.wp-yadisk-files', plugins_url('js/jquery.fileupload.js', __FILE__ ),array(
 			'jquery'
 		));
 		wp_enqueue_script( 'admin.wp-yadisk-files', plugins_url('js/admin.js', __FILE__ ),array(

@@ -45,7 +45,8 @@
 }
 
 .wp-yadisk-files iframe {
-	height: 32px;
+	width: 145px;
+	height: 34px;
 }
 
 .wp-yadisk-files .nobutton {

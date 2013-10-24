@@ -263,3 +263,7 @@
 .wp-yadisk-files.popup .file-list .dir:hover .file-icon {
 	background-position: -198px -1452px; width: 16px; height: 16px;
 }
+
+.wp-yadisk-files.popup .fileinput-button {
+	display: inline;
+}

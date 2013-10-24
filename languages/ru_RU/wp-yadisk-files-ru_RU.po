@@ -31,6 +31,11 @@ msgstr "Файл"
 msgid "Size"
 msgstr "Размер"
 
+#: ../../popup.php:21
+msgid "Upload"
+msgstr "Загрузить"
+
+
 #: ../../wp-yadisk-files.php:23
 #, php-format
 msgid "Скачать %s с Яндекс.Диск"
@@ -62,6 +67,39 @@ msgstr "Ошибка получения списка"
 #: ../../controllers/yadiskapi.php:146
 msgid "Error publishing "
 msgstr "Ошибка опубликования"
+
+#: ../../controllers/yadiskapi.php:183
+#: ../../controllers/yadiskapi.php:187
+msgid "Error uploading validation"
+msgstr "Ошибка валидации"
+
+#: ../../controllers/yadiskapi.php:169
+msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
+msgstr "Загруженный файл превышает максимально допустимый размер"
+
+#: ../../controllers/yadiskapi.php:170
+msgid "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form"
+msgstr "Загруженный файл превышает максимально допустимый размер"
+
+#: ../../controllers/yadiskapi.php:171
+msgid "The uploaded file was only partially uploaded"
+msgstr "Файл был загружен лишь частично"
+
+#: ../../controllers/yadiskapi.php:172
+msgid "No file was uploaded"
+msgstr "Файл не был загружен"
+
+#: ../../controllers/yadiskapi.php:173
+msgid "Missing a temporary folder"
+msgstr "Временная папка для записи файлов недоступна"
+
+#: ../../controllers/yadiskapi.php:174
+msgid "Failed to write file to disk"
+msgstr "Ошибка записи файла на диск"
+
+#: ../../controllers/yadiskapi.php:175
+msgid "A PHP extension stopped the file upload"
+msgstr "PHP дополнение прекратило загрузку файла"
 
 #: ../../controllers/settings.php:24
 msgid "Settings"
@@ -126,7 +164,7 @@ msgstr "Плагин создал я, <a target=\"_blank\" href=\"mailto:antongo
 
 #: ../../views/settings.php:93
 msgid "This plugin is totally free (and opensource!) now and forever. But if you like my plugin you can of course buy me a coffee :)"
-msgstr "Этот плагин абсолютно бесплатный (и с открытым исходным кодом!) сейчас и навсегда. Но если вам он понравился, вы конечно же можете купить мне кофе в знако благодарности :)"
+msgstr "Этот плагин абсолютно бесплатный (и с открытым исходным кодом!) сейчас и навсегда. Но если вам он понравился, вы конечно же можете купить мне кофе в знак благодарности :)"
 
 #: ../../views/settings.php:101
 msgid "Buy me a coffee"
@@ -166,3 +204,6 @@ msgstr "Wordpress Yadisk Files плагин"
 msgid "Blog"
 msgstr "Блог"
 
+#: ../../libraries/yadiskapi.php:196
+msgid "Error uploading"
+msgstr "Ошибка загрузки"
