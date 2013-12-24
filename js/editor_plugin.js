@@ -24,7 +24,7 @@
 				author : 'AntonGorodezkiy',
                 authorurl : 'http://eduard.kozachek.net/',
                 infourl : 'http://eduard.kozachek.net/',
-                version : "1.0"
+                version : "1.2.0"
 			};
 		}
 	});

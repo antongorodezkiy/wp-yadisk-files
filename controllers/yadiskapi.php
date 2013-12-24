@@ -22,6 +22,9 @@ class YadiskAPI {
 		$this->pass = $pass;
 	}
 	
+	protected function build_transparent_url($path) {
+		return '/index.php?'.YADISK_FILES_PLUGIN.'=1&action=download&filename='.$path;
+	}
 	
 	protected static function entryIsDir($entry) {
 		return ( isset($entry['resourcetype']) && $entry['resourcetype'] == 'collection' );
@@ -126,6 +129,10 @@ class YadiskAPI {
 		$path = urldecode($_POST['path']);
 		
 		$href = $this->yadisk->publish($path);
+		
+		if (get_option('wp-yadisk-files-transparent-mode')) {
+			$href = get_site_url() . $this->build_transparent_url($path);
+		}
 
 		$notify->setData(array('href' => $href));
 		
@@ -136,27 +143,7 @@ class YadiskAPI {
 				$notify->returnError(__('Error publishing ', 'wp-yadisk-files').' "'.$path.'"');
 	}
 	
-	
-	/*
-	 * Unpublish
-	 */
-	public function unpublish() {
-		global $notify;
 
-		$this->init();
-
-		$path = strip_tags(urldecode($_POST['path']));
-		
-		$href = $this->yadisk->post($path.'?unpublish');
-
-		$notify->setData(array('folders' => $folders, 'files' => $files));
-		
-		// return final message to user
-			if ($dir)
-				$notify->returnSuccess(__('Success', 'wp-yadisk-files'));
-			else
-				$notify->returnError(__('Error publishing ', 'wp-yadisk-files').' "'.$path.'"');
-	}
 	
 	
 	/*
@@ -204,6 +191,22 @@ class YadiskAPI {
 		
 	}
 	
+	public function download() {
+		$this->init();
+		
+		$srcpath = urldecode($_REQUEST['filename']);
+		
+		if (!$this->yadisk->isPublished($srcpath)) {
+			status_header(404);
+			nocache_headers();
+			include( get_404_template() );
+			exit;
+		}
+		
+		$temp_file = tempnam("/tmp", "wp-yadisk-files");
+		$this->yadisk->get_file($srcpath, $temp_file);
+		ci_force_download(pathinfo($srcpath, PATHINFO_BASENAME), $temp_file);
+	}
 	
 	public function getPopupTemplate() {
 		global $notify;

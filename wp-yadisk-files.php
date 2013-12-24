@@ -3,52 +3,104 @@
 	Plugin Name: YaDisk Files
 	Plugin URI: http://eduard.kozachek.net/projects/wordpress-projects/wp-yadisk-files-plugin/
 	Description: This plugin is created for easy adding files from <a target="_blank" href="http://disk.yandex.com/">Yandex Disk</a> service to posts or pages of your wordpress site.
-	Version: 1.1.0
+	Version: 1.2.0
 	Author: AntonGorodezkiy
 	Author URI: http://eduard.kozachek.net/
 	License: GPLv2
 	Text Domain: wp-yadisk-files
 */
 
+define('YADISK_FILES_PLUGIN','wp-yadisk-files');
 define('YADISK_FILES_APPPATH',dirname(__FILE__));
 include_once(YADISK_FILES_APPPATH.'/libraries/functions.php');
+include_once(YADISK_FILES_APPPATH.'/libraries/download_helper.php');
 include_once(YADISK_FILES_APPPATH.'/assets.php');
 add_action('init', 'yadisk_files_front_register_head');
 
-/* Shortcode */
-	function YadiskFilesShortcode( $atts ){
-		return sprintf('
-			<div class="yadisk-download-container">
-				<a class="yadisk-download" href="%s" title="%s" target="_blank">
-					'.__('Скачать %s с Яндекс.Диск','wp-yadisk-files').'
-				</a>
-			</div>
-		',$atts['href'],$atts['size'],$atts['name']);
+// Create Text Domain For Translations
+	function yadiskFilesLocalization() {
+		load_plugin_textdomain('wp-yadisk-files', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/'.get_locale().'/' );
 	}
-	add_shortcode( 'YadiskFiles', 'YadiskFilesShortcode' );
+	add_action('wp_loaded', 'yadiskFilesLocalization');
+
+// init api
+	function YadiskFilesInitApi() {
+		// includes
+			if (!class_exists('webdav_client')) {
+				require(YADISK_FILES_APPPATH.'/libraries/class_webdav_client.php');
+			}
+			
+			if (!class_exists('yadisk')) {
+				include_once(YADISK_FILES_APPPATH.'/libraries/yadisk.class.php');
+			}
+			
+			if (!class_exists('YadiskAPI')) {
+				include_once(YADISK_FILES_APPPATH.'/controllers/yadiskapi.php');
+			}
+			
+		return new YadiskAPI(get_option('wp-yadisk-files-login'), get_option('wp-yadisk-files-pass'));
+	}
+
+/* Shortcode */
+	function yadisk_files_init_shortcodes() {
+		function YadiskFilesShortcode( $atts ){
+			
+			$html = '
+				<div class="yadisk-download-container">
+					<a class="yadisk-download" href="{href}" title="{size}" target="_blank">
+						{label} {size}
+					</a>
+				</div>
+			';
+			
+			return str_replace(
+				array(
+					'{href}',
+					'{size}',
+					'{name}',
+					'{label}'
+				),
+				array(
+					$atts['href'],
+					$atts['size'],
+					$atts['name'],
+					(isset($atts['label']) ? $atts['label'] : str_replace('{name}',$atts['name'],__('Download {name} from Yandex.Disk','wp-yadisk-files')))
+				),
+				$html);
+		}
+		add_shortcode( 'YadiskFiles', 'YadiskFilesShortcode' );
+	}
+	add_action('wp_loaded', 'yadisk_files_init_shortcodes');
 	
-	
+// for transparent mode
+	function yadisk_files_init_routing() {
+
+		// routing
+			if (isset($_REQUEST[YADISK_FILES_PLUGIN]) && isset($_REQUEST['action']))
+			{
+				switch($_REQUEST['action'])
+				{
+					case 'download':
+						
+						if (isset($_REQUEST['filename'])) {
+							// init api
+							$YadiskAPI = YadiskFilesInitApi();
+							$YadiskAPI->download();
+						}
+					break;
+				}
+			}
+	}
+	add_action('init', 'yadisk_files_init_routing');
 	
 if (is_admin())
 {
-
-	// Create Text Domain For Translations
-		function yadiskFilesLocalization() {
-			load_plugin_textdomain('wp-yadisk-files', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/'.get_locale().'/' );
-		}
-		add_action('wp_loaded', 'yadiskFilesLocalization');
 		
 			
-	// includes
-		if (!class_exists('webdav_client')) {
-			require(YADISK_FILES_APPPATH.'/libraries/class_webdav_client.php');
+	// init api
+		if (!isset($YadiskAPI)) {
+			$YadiskAPI = YadiskFilesInitApi();
 		}
-		
-		if (!class_exists('yadisk')) {
-			require(YADISK_FILES_APPPATH.'/libraries/yadisk.class.php');
-		}
-		include_once(YADISK_FILES_APPPATH.'/controllers/yadiskapi.php');
-		$YadiskAPI = new YadiskAPI(get_option('wp-yadisk-files-login'), get_option('wp-yadisk-files-pass'));
 	
 	/* Notify */
 		if(!class_exists('Notify')) {

@@ -207,3 +207,35 @@ msgstr "Блог"
 #: ../../libraries/yadiskapi.php:196
 msgid "Error uploading"
 msgstr "Ошибка загрузки"
+
+#: ../../views/settings.php:46
+msgid "Root directory"
+msgstr "Корневая директория"
+
+#: ../../views/settings.php:46
+msgid "Default directory"
+msgstr "Директория по умолчанию"
+
+#: ../../views/settings.php:55
+msgid "Default download label"
+msgstr "Надпись на кнопке для скачивания по умолчанию"
+
+#: ../../views/settings.php:58
+msgid "Download {name} from Yandex.Disk"
+msgstr "Скачать {name} с Яндекс.Диск"
+
+#: ../../views/settings.php:73
+msgid "Transparent mode"
+msgstr "Прозрачный режим"
+
+#: ../../views/settings.php:74
+msgid "In Transparent mode user wouldn't be redirected to Yandex.Disk while downloading"
+msgstr "В Прозрачном режиме пользователь не будет перенаправлен на Яндекс.Диск при скачивании"
+
+#: ../../views/settings.php:74
+msgid "Warning: use careful, turning on this option could increase server load"
+msgstr "Внимание: используйте осторожно, включение этой опции может увеличить нагрузку на сервер"
+
+#: ../../views/settings.php:74
+msgid "Warning: not recommended to use with large files"
+msgstr "Внимание: не рекомендуется использовать с большими файлами"

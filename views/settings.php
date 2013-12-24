@@ -24,7 +24,7 @@
 				
 				<div class="row in">
 					<div class="row">
-						<div class="quarter">
+						<div class="half">
 							<label class="label push-right"><?=__('Yadisk Login', 'wp-yadisk-files')?>*</label>
 						</div>
 						<div class="inputs half">
@@ -33,18 +33,65 @@
 					</div>
 							
 					<div class="row">
-						<div class="quarter">
+						<div class="half">
 							<label class="label push-right"><?=__('Yadisk Password', 'wp-yadisk-files')?>*</label>
 						</div>
 						<div class="inputs half">
 							<input class="width-50" type="password" name="wp-yadisk-files-pass" value="<?=get_option('wp-yadisk-files-pass')?>" required="required"/>
 						</div>
 					</div>
-							
 					
 					<div class="row">
-						<div class="quarter"></div>
-						<div class="quarter">
+						<div class="half">
+							<label class="label push-right"><?=__('Root directory', 'wp-yadisk-files')?>*</label>
+						</div>
+						<div class="inputs half">
+							<input class="width-50" type="text" name="wp-yadisk-files-root-directory" value="<?=(get_option('wp-yadisk-files-root-directory') ? get_option('wp-yadisk-files-root-directory') : '/')?>" required="required"/>
+						</div>
+					</div>
+							
+					<div class="row">
+						<div class="half">
+							<label class="label push-right"><?=__('Default directory', 'wp-yadisk-files')?>*</label>
+						</div>
+						<div class="inputs half">
+							<input class="width-50" type="text" name="wp-yadisk-files-default-directory" value="<?=(get_option('wp-yadisk-files-default-directory') ? get_option('wp-yadisk-files-default-directory') : '/')?>" required="required"/>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="half">
+							<label class="label push-right"><?=__('Default download label', 'wp-yadisk-files')?>*</label>
+						</div>
+						<div class="inputs half">
+							<?=__('Download {name} from Yandex.Disk','wp-yadisk-files')?>
+							<input class="width-50" type="text" name="wp-yadisk-files-default-download-label" value="<?=(get_option('wp-yadisk-files-default-download-label') ? get_option('wp-yadisk-files-default-download-label') : __('Download {name} from Yandex.Disk','wp-yadisk-files'))?>" required="required"/>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="half">
+							<label class="label push-right"><?=__('Transparent mode', 'wp-yadisk-files')?></label>
+						</div>
+						<div class="inputs half">
+							<input class="width-50" type="checkbox" name="wp-yadisk-files-transparent-mode" value="1" <?=(get_option('wp-yadisk-files-transparent-mode') ? 'checked="checked"' : '')?>" />
+						</div>
+					</div>
+					<div class="row">
+						<div>
+							<i><?=__("In Transparent mode user wouldn't be redirected to Yandex.Disk while downloading", 'wp-yadisk-files')?></i>
+						</div>
+						<div>
+							<b><i><?=__("Warning: use careful, turning on this option could increase server load", 'wp-yadisk-files')?></i></b>
+						</div>
+						<div>
+							<b><i><?=__("Warning: not recommended to use with large files", 'wp-yadisk-files')?></i></b>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="half"></div>
+						<div class="half">
 							<button class="btn" type="submit"><?=__('Save', 'wp-yadisk-files')?></button>
 						</div>
 					</div>

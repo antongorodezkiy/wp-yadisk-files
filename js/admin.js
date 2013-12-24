@@ -1,5 +1,6 @@
 var YadiskFiles = YadiskFiles || {};
-YadiskFiles.currentDir = '/';
+YadiskFiles.rootDir = YadiskFiles.url['root-directory'] ? YadiskFiles.url['root-directory'] : '/';
+YadiskFiles.currentDir = YadiskFiles.url['default-directory'] ? YadiskFiles.url['default-directory'] : YadiskFiles.rootDir;
 YadiskFiles.editor = null;
 
 // get current dir
@@ -29,7 +30,7 @@ YadiskFiles.editor = null;
 		var pathParts = [];
 		var newPathParts = [];
 		if (typeof(path) == 'undefined') {
-			path = '/';
+			path = YadiskFiles.rootDir;
 		}
 		else {
 			pathParts = path.split("/");
@@ -46,8 +47,8 @@ YadiskFiles.editor = null;
 				
 				YadiskFiles.setCurrentDir($, path);
 				
-				if (path != '/') {
-					html += '<tr><td><a href="#" class="jq-dir in dir file arrow_up" data-href="/"><span class="file-icon"></span>/</a></td><td>&nbsp;</td></tr>';
+				if (path != YadiskFiles.rootDir) {
+					html += '<tr><td><a href="#" class="jq-dir in dir file arrow_up" data-href="'+YadiskFiles.rootDir+'"><span class="file-icon"></span>/</a></td><td>&nbsp;</td></tr>';
 					
 					for(i in pathParts)
 						if (pathParts[i] != '')
@@ -131,7 +132,7 @@ YadiskFiles.editor = null;
 				var json = $.parseJSON(data);
 				
 				if (notifyIsSuccess(json)) {
-					YadiskFiles.editor.execCommand('mceInsertContent', false, '[YadiskFiles href="'+json.data.href+'" name="'+name+'" size="'+size+'"]');
+					YadiskFiles.editor.execCommand('mceInsertContent', false, '[YadiskFiles label="'+(YadiskFiles.lang['Default download label'].replace('{name}',name))+'" href="'+json.data.href+'" name="'+name+'" size="'+size+'"]');
 					$(".wp-yadisk-files-filesDialog","body").dialog("close");
 				}
 				else {

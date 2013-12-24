@@ -302,6 +302,8 @@ class webdav_client {
 		$this->_path = $this->_translate_uri($path);
 		$this->_header_unset();
 		$this->_create_basic_request('GET');
+		$this->_header_add('TE: chunked');
+		$this->_header_add('Accept-Encoding: gzip');
 		$this->_send_request();
 		$this->_get_respond();
 		$response = $this->_process_respond();
@@ -1437,6 +1439,7 @@ class webdav_client {
 		$this->_body = $buffer;
 		// $this->_buffer = $header . "\r\n\r\n" . $buffer;
 		$this->_error_log($this->_header);
+		
 	}
 
 
@@ -1554,4 +1557,3 @@ class webdav_client {
 		}
 	}
 }
-?>

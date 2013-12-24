@@ -18,7 +18,10 @@
 					url: []
 				};
 				YadiskFiles.lang['Choose file'] = '".__('Choose file', 'wp-yadisk-files')."';
+				YadiskFiles.lang['Default download label'] = '".get_option('wp-yadisk-files-default-download-label')."';
 				YadiskFiles.url['ajaxurl'] = '".admin_url('admin-ajax.php')."';
+				YadiskFiles.url['root-directory'] = '".get_option('wp-yadisk-files-root-directory')."';
+				YadiskFiles.url['default-directory'] = '".get_option('wp-yadisk-files-default-directory')."';
 			</script>
 		";
 	}

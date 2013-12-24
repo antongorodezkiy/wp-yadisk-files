@@ -15,6 +15,10 @@
 	function yadisk_files_settingsInit() {
 		register_setting( 'YadiskFilesSettings', 'wp-yadisk-files-login' );
 		register_setting( 'YadiskFilesSettings', 'wp-yadisk-files-pass' );
+		register_setting( 'YadiskFilesSettings', 'wp-yadisk-files-root-directory' );
+		register_setting( 'YadiskFilesSettings', 'wp-yadisk-files-default-directory' );
+		register_setting( 'YadiskFilesSettings', 'wp-yadisk-files-default-download-label' );
+		register_setting( 'YadiskFilesSettings', 'wp-yadisk-files-transparent-mode' );
 	}
 	add_action('admin_init', 'yadisk_files_settingsInit');
 
