@@ -13,7 +13,6 @@
 define('YADISK_FILES_PLUGIN','wp-yadisk-files');
 define('YADISK_FILES_APPPATH',dirname(__FILE__));
 include_once(YADISK_FILES_APPPATH.'/libraries/functions.php');
-include_once(YADISK_FILES_APPPATH.'/libraries/download_helper.php');
 include_once(YADISK_FILES_APPPATH.'/assets.php');
 add_action('init', 'yadisk_files_front_register_head');
 
