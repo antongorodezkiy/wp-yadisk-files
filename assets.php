@@ -48,8 +48,33 @@
 			'jquery',
 			'notify.wp-yadisk-files'
 		));
+		
+		wp_localize_script('admin.wp-yadisk-files', 'YadiskFiles', array(
+			'lang' => array(
+				'Choose file' => __('Choose file', 'wp-yadisk-files'),
+				'Default download label' => get_option('wp-yadisk-files-default-download-label')
+			),
+			'url' => array(
+				'ajaxurl' => admin_url('admin-ajax.php'),
+				'root-directory' => get_option('wp-yadisk-files-root-directory'),
+				'default-directory' => get_option('wp-yadisk-files-default-directory')
+			)
+		));
 	}
 	
-	function yadisk_files_front_register_head() {	
-		wp_enqueue_style('front.wp-yadisk-files', plugins_url('css/front.wp-yadisk-files.css', __FILE__ ));	
+	function yadisk_files_front_register_head() {
+		
+		wp_enqueue_style('front.wp-yadisk-files', plugins_url('css/front.wp-yadisk-files.css', __FILE__ ));
+		
+		wp_enqueue_script('jquery');
+		wp_enqueue_script( 'frontend.wp-yadisk-files', plugins_url('js/frontend.js', __FILE__ ),array(
+			'jquery'
+		));
+		
+		// javascript settings
+			wp_localize_script('frontend.wp-yadisk-files', 'YadiskFiles', array(
+				'url' => array(
+					'ajaxurl' => admin_url('admin-ajax.php')
+				)
+			));
 	}

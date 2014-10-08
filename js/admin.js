@@ -135,7 +135,7 @@ YadiskFiles.editor = null;
 					YadiskFiles.editor.execCommand(
 						'mceInsertContent',
 						false,
-						'[YadiskFiles label="'+(YadiskFiles.lang['Default download label'].replace('{name}',name))+'" href="'+json.data.href+'" name="'+name+'" size="'+size+'" counter="true"]'
+						'[YadiskFiles label="'+(YadiskFiles.lang['Default download label'].replace('{name}',name))+'" href="'+json.data.href+'" name="'+name+'" size="'+size+'" path_hash="'+json.data.path_hash+'" counter="true"]'
 					);
 					$(".wp-yadisk-files-filesDialog","body").dialog("close");
 				}

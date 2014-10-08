@@ -3,7 +3,7 @@
 	Plugin Name: YaDisk Files
 	Plugin URI: http://eduard.kozachek.net/projects/wordpress-projects/wp-yadisk-files-plugin/
 	Description: This plugin is created for easy adding files from <a target="_blank" href="http://disk.yandex.com/">Yandex Disk</a> service to posts or pages of your wordpress site.
-	Version: 1.2.2
+	Version: 1.2.3
 	Author: AntonGorodezkiy
 	Author URI: http://eduard.kozachek.net/
 	License: GPLv2
@@ -13,6 +13,7 @@
 define('YADISK_FILES_PLUGIN','wp-yadisk-files');
 define('YADISK_FILES_APPPATH',dirname(__FILE__));
 include_once(YADISK_FILES_APPPATH.'/libraries/functions.php');
+include_once(YADISK_FILES_APPPATH.'/libraries/download_helper.php');
 include_once(YADISK_FILES_APPPATH.'/assets.php');
 add_action('init', 'yadisk_files_front_register_head');
 
@@ -45,13 +46,12 @@ add_action('init', 'yadisk_files_front_register_head');
 		function YadiskFilesShortcode( $atts ) {
 			
 			$yadisk_download_counters = get_option('yadisk_download_counters', array());
-			$filename = parse_str(parse_url(html_entity_decode($atts['href']), PHP_URL_QUERY), $href);
 			
-			$counter = (isset($yadisk_download_counters[$href['filename']]) ? $yadisk_download_counters[$href['filename']] : 0);
+			$counter = (isset($yadisk_download_counters[$atts['path_hash']]) ? $yadisk_download_counters[$atts['path_hash']] : 0);
 			
 			$html = '
 				<div class="yadisk-download-container">
-					<a class="yadisk-download" href="{href}" title="{size}" target="_blank">
+					<a class="yadisk-download js-yadisk-download" href="{href}" title="{size}" target="_blank" data-path_hash="{path_hash}">
 						{label} {size} {download_counter}
 					</a>
 				</div>
@@ -63,6 +63,7 @@ add_action('init', 'yadisk_files_front_register_head');
 					'{size}',
 					'{name}',
 					'{label}',
+					'{path_hash}',
 					'{download_counter}'
 				),
 				array(
@@ -70,6 +71,7 @@ add_action('init', 'yadisk_files_front_register_head');
 					$atts['size'],
 					$atts['name'],
 					(isset($atts['label']) ? $atts['label'] : str_replace('{name}',$atts['name'],__('Download {name} from Yandex.Disk','wp-yadisk-files'))),
+					(isset($atts['path_hash']) && $atts['path_hash'] ? $atts['path_hash'] : '' ),
 					(isset($atts['counter']) && $atts['counter'] == 'true' ?
 						__('Download count: ','wp-yadisk-files').$counter
 						: '' )
@@ -92,14 +94,14 @@ add_action('init', 'yadisk_files_front_register_head');
 						
 						if (isset($_REQUEST['filename'])) {
 							
-							$filename = esc_sql(sanitize_text_field($_REQUEST['filename']));
+							$path_hash = esc_sql(sanitize_text_field($_REQUEST['path_hash']));
 							
 							// count download
 								$yadisk_download_counters = get_option('yadisk_download_counters', array());
-								if (!isset($yadisk_download_counters[$filename])) {
-									$yadisk_download_counters[$filename] = 0;
+								if (!isset($yadisk_download_counters[$path_hash])) {
+									$yadisk_download_counters[$path_hash] = 0;
 								}
-								$yadisk_download_counters[$filename]++;
+								$yadisk_download_counters[$path_hash]++;
 								update_option('yadisk_download_counters', $yadisk_download_counters);
 							
 							// init api
@@ -130,9 +132,9 @@ if (is_admin())
 	
 		
 	/* styles and scripts */
-	add_action('admin_print_styles', 'yadisk_files_js_settings');
-	add_action('admin_print_styles', 'yadisk_files_admin_register_head');
-	add_action('admin_head','yadisk_files_add_admin_js_files');
+	//add_action('admin_print_styles', 'yadisk_files_js_settings');
+	add_action('admin_enqueue_scripts', 'yadisk_files_admin_register_head');
+	add_action('admin_enqueue_scripts','yadisk_files_add_admin_js_files');
 	
 	
 	/* editor */
@@ -147,3 +149,19 @@ if (is_admin())
 		add_action('wp_ajax_yadisk_files_publish', array($YadiskAPI, 'publish'));
 		add_action('wp_ajax_yadisk_files_get_popup_template', array($YadiskAPI, 'getPopupTemplate'), 10, 'popup');
 }
+
+	
+function yadisk_files_count_download() {
+	$path_hash = esc_sql(sanitize_text_field($_REQUEST['path_hash']));
+			
+	// count download
+		$yadisk_download_counters = get_option('yadisk_download_counters', array());
+		if (!isset($yadisk_download_counters[$path_hash])) {
+			$yadisk_download_counters[$path_hash] = 0;
+		}
+		$yadisk_download_counters[$path_hash]++;
+		update_option('yadisk_download_counters', $yadisk_download_counters);
+	
+}
+add_action('wp_ajax_yadisk_files_count_download', 'yadisk_files_count_download');
+add_action('wp_ajax_nopriv_yadisk_files_count_download', 'yadisk_files_count_download');

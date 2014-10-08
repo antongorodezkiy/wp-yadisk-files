@@ -23,7 +23,7 @@ class YadiskAPI {
 	}
 	
 	protected function build_transparent_url($path) {
-		return '/index.php?'.YADISK_FILES_PLUGIN.'=1&action=download&filename='.$path;
+		return '/index.php?'.YADISK_FILES_PLUGIN.'=1&action=download&filename='.$path.'&path_hash='.md5($path);
 	}
 	
 	protected static function entryIsDir($entry) {
@@ -134,7 +134,10 @@ class YadiskAPI {
 			$href = get_site_url() . $this->build_transparent_url($path);
 		}
 
-		$notify->setData(array('href' => $href));
+		$notify->setData(array(
+			'href' => $href,
+			'path_hash' => md5($path)
+		));
 		
 		// return final message to user
 			if ($href)
