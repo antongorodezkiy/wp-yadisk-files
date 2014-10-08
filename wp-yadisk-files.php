@@ -3,7 +3,7 @@
 	Plugin Name: YaDisk Files
 	Plugin URI: http://eduard.kozachek.net/projects/wordpress-projects/wp-yadisk-files-plugin/
 	Description: This plugin is created for easy adding files from <a target="_blank" href="http://disk.yandex.com/">Yandex Disk</a> service to posts or pages of your wordpress site.
-	Version: 1.2.0
+	Version: 1.2.1
 	Author: AntonGorodezkiy
 	Author URI: http://eduard.kozachek.net/
 	License: GPLv2
@@ -43,12 +43,17 @@ add_action('init', 'yadisk_files_front_register_head');
 
 /* Shortcode */
 	function yadisk_files_init_shortcodes() {
-		function YadiskFilesShortcode( $atts ){
+		function YadiskFilesShortcode( $atts ) {
+			
+			$yadisk_download_counters = get_option('yadisk_download_counters', array());
+			$filename = parse_str(parse_url(html_entity_decode($atts['href']), PHP_URL_QUERY), $href);
+			
+			$counter = (isset($yadisk_download_counters[$href['filename']]) ? $yadisk_download_counters[$href['filename']] : 0);
 			
 			$html = '
 				<div class="yadisk-download-container">
 					<a class="yadisk-download" href="{href}" title="{size}" target="_blank">
-						{label} {size}
+						{label} {size} {download_counter}
 					</a>
 				</div>
 			';
@@ -58,13 +63,17 @@ add_action('init', 'yadisk_files_front_register_head');
 					'{href}',
 					'{size}',
 					'{name}',
-					'{label}'
+					'{label}',
+					'{download_counter}'
 				),
 				array(
 					$atts['href'],
 					$atts['size'],
 					$atts['name'],
-					(isset($atts['label']) ? $atts['label'] : str_replace('{name}',$atts['name'],__('Download {name} from Yandex.Disk','wp-yadisk-files')))
+					(isset($atts['label']) ? $atts['label'] : str_replace('{name}',$atts['name'],__('Download {name} from Yandex.Disk','wp-yadisk-files'))),
+					(isset($atts['counter']) && $atts['counter'] == 'true' ?
+						__('Download count: ','wp-yadisk-files').$counter
+						: '' )
 				),
 				$html);
 		}
@@ -83,6 +92,17 @@ add_action('init', 'yadisk_files_front_register_head');
 					case 'download':
 						
 						if (isset($_REQUEST['filename'])) {
+							
+							$filename = esc_sql(sanitize_text_field($_REQUEST['filename']));
+							
+							// count download
+								$yadisk_download_counters = get_option('yadisk_download_counters', array());
+								if (!isset($yadisk_download_counters[$filename])) {
+									$yadisk_download_counters[$filename] = 0;
+								}
+								$yadisk_download_counters[$filename]++;
+								update_option('yadisk_download_counters', $yadisk_download_counters);
+							
 							// init api
 							$YadiskAPI = YadiskFilesInitApi();
 							$YadiskAPI->download();

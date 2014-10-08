@@ -132,7 +132,11 @@ YadiskFiles.editor = null;
 				var json = $.parseJSON(data);
 				
 				if (notifyIsSuccess(json)) {
-					YadiskFiles.editor.execCommand('mceInsertContent', false, '[YadiskFiles label="'+(YadiskFiles.lang['Default download label'].replace('{name}',name))+'" href="'+json.data.href+'" name="'+name+'" size="'+size+'"]');
+					YadiskFiles.editor.execCommand(
+						'mceInsertContent',
+						false,
+						'[YadiskFiles label="'+(YadiskFiles.lang['Default download label'].replace('{name}',name))+'" href="'+json.data.href+'" name="'+name+'" size="'+size+'" counter="true"]'
+					);
 					$(".wp-yadisk-files-filesDialog","body").dialog("close");
 				}
 				else {
