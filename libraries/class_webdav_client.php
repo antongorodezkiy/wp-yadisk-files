@@ -1284,7 +1284,7 @@ class webdav_client {
 	function _create_basic_request($method) {
 		$request = '';
 		$this->_header_add(sprintf('%s %s %s', $method, $this->_path, $this->_protocol));
-		$this->_header_add(sprintf('Host: %s', $this->_server));
+		$this->_header_add(sprintf('Host: %s', parse_url($this->_server,PHP_URL_HOST)));
 		// $request .= sprintf('Connection: Keep-Alive');
 		$this->_header_add(sprintf('User-Agent: %s', $this->_user_agent));
 		$this->_header_add(sprintf('Authorization: Basic %s', base64_encode("$this->_user:$this->_pass")));
