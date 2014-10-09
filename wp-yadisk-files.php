@@ -3,7 +3,7 @@
 	Plugin Name: YaDisk Files
 	Plugin URI: http://eduard.kozachek.net/projects/wordpress-projects/wp-yadisk-files-plugin/
 	Description: This plugin is created for easy adding files from <a target="_blank" href="http://disk.yandex.com/">Yandex Disk</a> service to posts or pages of your wordpress site.
-	Version: 1.2.3
+	Version: 1.2.4
 	Author: AntonGorodezkiy
 	Author URI: http://eduard.kozachek.net/
 	License: GPLv2
